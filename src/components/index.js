@@ -1,0 +1,12 @@
+export {default as App} from "./App";
+export {default as Blog} from "./blog";
+export {default as Contact} from "./contact";
+export {default as CourseOne} from "./CourseOne";
+export {default as CourseTwo} from "./CourseTwo";
+export {default as CourseThree} from "./CourseThree";
+export {default as CourseFour} from "./CourseFour";
+export {default as Admin} from "./Admin";
+export {default as Awards} from "./Awards";
+export {default as Others} from "./Others";
+export {default as Interest} from "./Interest";
+export {default as InterestSub} from "./InterestSub";
