@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/repo-name/static/css/main.e6c13ad2.css",
+    "main.js": "/repo-name/static/js/main.22dd4d07.js",
+    "static/media/v2.mp4": "/repo-name/static/media/v2.87d7f1b49ab5b882ef96.mp4",
+    "static/media/v1.MOV": "/repo-name/static/media/v1.8a7194b3c18f9748e6dd.MOV",
+    "static/media/white_img.webp": "/repo-name/static/media/white_img.869c13169df01af196ac.webp",
+    "static/media/2022.jpg": "/repo-name/static/media/2022.3f8dc96fef0a66bfb5da.jpg",
+    "static/media/linked_profile pic.jpg": "/repo-name/static/media/linked_profile pic.18791cda65014ca3bfca.jpg",
+    "static/media/2021.png": "/repo-name/static/media/2021.f152b51c85a7f8c8b33a.png",
+    "static/media/2019.png": "/repo-name/static/media/2019.0f4f9dcbb71567f3f0c6.png",
+    "static/media/2020.webp": "/repo-name/static/media/2020.eac6fb15b224af8634bb.webp",
+    "index.html": "/repo-name/index.html",
+    "main.e6c13ad2.css.map": "/repo-name/static/css/main.e6c13ad2.css.map",
+    "main.22dd4d07.js.map": "/repo-name/static/js/main.22dd4d07.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.22dd4d07.js"
+  ]
+}
