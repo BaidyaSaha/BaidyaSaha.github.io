@@ -1,21 +1,26 @@
 {
   "files": {
     "main.css": "/static/css/main.e6c13ad2.css",
-    "main.js": "/static/js/main.cbfbe7ab.js",
+    "main.js": "/static/js/main.f31c0269.js",
     "static/media/v2.mp4": "/static/media/v2.87d7f1b49ab5b882ef96.mp4",
     "static/media/v1.MOV": "/static/media/v1.8a7194b3c18f9748e6dd.MOV",
+    "static/media/Indianstatisticalinstitutelogo.png": "/static/media/Indianstatisticalinstitutelogo.01b2e4483563fd109c5b.png",
+    "static/media/Conacyt-logo.png": "/static/media/Conacyt-logo.0dc5b9a251a294e3b982.png",
     "static/media/white_img.webp": "/static/media/white_img.869c13169df01af196ac.webp",
-    "static/media/2022.jpg": "/static/media/2022.3f8dc96fef0a66bfb5da.jpg",
+    "static/media/Baidya Research Impact.jpg": "/static/media/Baidya Research Impact.bf27ffc3b4acc7f9598b.jpg",
+    "static/media/CUE.png": "/static/media/CUE.7b79702a64d98cd095eb.png",
+    "static/media/NSERC.png": "/static/media/NSERC.7c6c2f65cecfbb84017e.png",
+    "static/media/UofA.png": "/static/media/UofA.f174b334d630f07a263a.png",
+    "static/media/Jadavpur_University_Logo.png": "/static/media/Jadavpur_University_Logo.e8cbfc6422e3c05d43f6.png",
     "static/media/linked_profile pic.jpg": "/static/media/linked_profile pic.18791cda65014ca3bfca.jpg",
-    "static/media/2021.png": "/static/media/2021.f152b51c85a7f8c8b33a.png",
-    "static/media/2019.png": "/static/media/2019.0f4f9dcbb71567f3f0c6.png",
-    "static/media/2020.webp": "/static/media/2020.eac6fb15b224af8634bb.webp",
+    "static/media/Mitacs_logo.png": "/static/media/Mitacs_logo.4f71f2ff0f78bb50e3a7.png",
+    "static/media/NVIDIA_logo.png": "/static/media/NVIDIA_logo.54bde6dcf45b5f8f07af.png",
     "index.html": "/index.html",
     "main.e6c13ad2.css.map": "/static/css/main.e6c13ad2.css.map",
-    "main.cbfbe7ab.js.map": "/static/js/main.cbfbe7ab.js.map"
+    "main.f31c0269.js.map": "/static/js/main.f31c0269.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.cbfbe7ab.js"
+    "static/js/main.f31c0269.js"
   ]
 }
