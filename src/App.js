@@ -1,7 +1,7 @@
 import { Route } from "react-router-dom";
-import {Routes} from 'react-router-dom';
-import Home  from "./components/Home"
-import Philosophy  from "./components/Philosophy"
+import { Routes } from "react-router-dom";
+import Home from "./components/Home";
+import Philosophy from "./components/Philosophy";
 import PgCourses from "./components/PgCourses";
 import UGCourses from "./components/Ugcourses";
 import Supervision from "./components/Supervision";
@@ -12,15 +12,13 @@ import Admin from "./components/Admin";
 import Awards from "./components/Awards";
 import Others from "./components/Others";
 import Contact from "./components/Contact";
+import Grants from "./components/Grants";
 
 export function App() {
   return (
     <div>
-    
-
-
-    <Routes>
-      <Route path="/" element={<Home />} />
+      <Routes>
+        <Route path="/" element={<Home />} />
         <Route path="/philosophy" element={<Philosophy />} />
         <Route path="/pgcourses" element={<PgCourses />} />
         <Route path="/ugcourses" element={<UGCourses />} />
@@ -31,11 +29,11 @@ export function App() {
         <Route path="/admin" element={<Admin />} />
         <Route path="/awards" element={<Awards />} />
         <Route path="/others" element={<Others />} />
-        <Route path="/contact" element={<Contact/>}/>
-        
-    </Routes>
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/grants" element={<Grants />} />
+      </Routes>
     </div>
-  )
+  );
 }
 
 export default App;

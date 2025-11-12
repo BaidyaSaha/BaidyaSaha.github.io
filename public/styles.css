@@ -350,7 +350,8 @@ animation: typewriter 3s steps(55) 1s 1 normal both,
     width: 0;
   }
   to {
-    width: 710px;
+    /* width: 710px; */
+    width: 450px;
   }
 }
 @keyframes blinkTextCursor {
@@ -1479,18 +1480,36 @@ h1 span {
 
 /*------------------------------------Home Page-----------------------------------------------*/
 .home_headerct{
-background: rgb(52, 52, 52);
+/* background: rgb(52, 52, 52); */
 z-index: 1;
-
+width: 100%;
+display: flex;
+justify-content: space-between;
 }
 
 .home_headerwave{
   height: 250px;
 }
+
 .home_headercard{
   width: 98%;
   border: 3px inset;
   background: rgb(52, 52, 52);
+}
+
+.home_headercard_1{
+  width: 98%;
+  border: 3px inset;
+  background-color: white;
+  border: 2px solid blue;
+}
+
+.home_headercard_3{
+  width: 98%;
+  border: 3px inset;
+  background: rgb(52, 52, 52);
+  background-color: white;
+  border: 2px solid blue;
 }
 
 .head_img{
@@ -1507,13 +1526,12 @@ z-index: 1;
 }
 
 .head_title{
- 
   padding-bottom:0 ;
   padding-top: 10px;
-  font-size: 4rem;
+  font-size: 2rem;
   color: #fff;
-  position: relative;
-  top: 50%;
+  /* position: relative; */
+  /* top: 50%; */
   font-weight: bold;
   font-family: 'Cairo', sans-serif;
   letter-spacing: 7px;
