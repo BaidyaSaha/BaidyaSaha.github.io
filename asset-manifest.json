@@ -1,13 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.e6c13ad2.css",
-    "main.js": "/static/js/main.f31c0269.js",
+    "main.css": "/static/css/main.b384e7ee.css",
+    "main.js": "/static/js/main.3d5822ed.js",
     "static/media/v2.mp4": "/static/media/v2.87d7f1b49ab5b882ef96.mp4",
     "static/media/v1.MOV": "/static/media/v1.8a7194b3c18f9748e6dd.MOV",
+    "static/media/BaidyaCV_Canada.pdf": "/static/media/BaidyaCV_Canada.20f621e4d3298be55d5a.pdf",
     "static/media/Indianstatisticalinstitutelogo.png": "/static/media/Indianstatisticalinstitutelogo.01b2e4483563fd109c5b.png",
+    "static/media/bootstrap-icons.woff?": "/static/media/bootstrap-icons.1295669cd4e305c97f2c.woff",
     "static/media/Conacyt-logo.png": "/static/media/Conacyt-logo.0dc5b9a251a294e3b982.png",
     "static/media/white_img.webp": "/static/media/white_img.869c13169df01af196ac.webp",
+    "static/media/bootstrap-icons.woff2?": "/static/media/bootstrap-icons.92ea18a81d737146ff04.woff2",
     "static/media/Baidya Research Impact.jpg": "/static/media/Baidya Research Impact.bf27ffc3b4acc7f9598b.jpg",
+    "static/media/CCV-Baidya_NathSaha (2).pdf": "/static/media/CCV-Baidya_NathSaha (2).ae9e648664cb43700006.pdf",
     "static/media/CUE.png": "/static/media/CUE.7b79702a64d98cd095eb.png",
     "static/media/NSERC.png": "/static/media/NSERC.7c6c2f65cecfbb84017e.png",
     "static/media/UofA.png": "/static/media/UofA.f174b334d630f07a263a.png",
@@ -16,11 +20,11 @@
     "static/media/Mitacs_logo.png": "/static/media/Mitacs_logo.4f71f2ff0f78bb50e3a7.png",
     "static/media/NVIDIA_logo.png": "/static/media/NVIDIA_logo.54bde6dcf45b5f8f07af.png",
     "index.html": "/index.html",
-    "main.e6c13ad2.css.map": "/static/css/main.e6c13ad2.css.map",
-    "main.f31c0269.js.map": "/static/js/main.f31c0269.js.map"
+    "main.b384e7ee.css.map": "/static/css/main.b384e7ee.css.map",
+    "main.3d5822ed.js.map": "/static/js/main.3d5822ed.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6c13ad2.css",
-    "static/js/main.f31c0269.js"
+    "static/css/main.b384e7ee.css",
+    "static/js/main.3d5822ed.js"
   ]
 }
