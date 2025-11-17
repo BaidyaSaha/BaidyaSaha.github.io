@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { Container } from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
 import { NavLink } from "react-router-dom";
+import "./NavStyles.css";
 
 function WhiteNavBar() {
+  const [showPublications, setShowPublications] = useState(false);
+
   return (
     <div>
       <Navbar bg="white" expand="lg" className="others_nav">
@@ -13,10 +16,12 @@ function WhiteNavBar() {
           <Navbar.Brand className="brand-style me-auto">
             <NavLink to="/">BAIDYA SAHA</NavLink>
           </Navbar.Brand>
+
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-navw" className="nav_bar_white">
-            <Nav className="ms-auto others_navlink ">
-              <Nav.Link className=" navbar1_link fs-5">
+            <Nav className="ms-auto others_navlink">
+              {/* Home */}
+              <Nav.Link className="navbar1_link fs-5">
                 <NavLink
                   to="/"
                   className="fs-5 text-decoration-none text-secondary"
@@ -25,12 +30,13 @@ function WhiteNavBar() {
                 </NavLink>
               </Nav.Link>
 
+              {/* Teaching */}
               <NavDropdown
                 title="Teaching"
                 id="basic-nav-dropdown3"
                 className="navbar1_link fs-5 bg-white"
               >
-                <NavDropdown.Item className="fs-5">
+                <NavDropdown.Item>
                   <NavLink
                     to="/philosophy"
                     className="fs-5 text-decoration-none text-secondary"
@@ -39,7 +45,7 @@ function WhiteNavBar() {
                   </NavLink>
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item className="fs-5">
+                <NavDropdown.Item>
                   <NavLink
                     to="/pgcourses"
                     className="fs-5 text-decoration-none text-secondary"
@@ -48,7 +54,7 @@ function WhiteNavBar() {
                   </NavLink>
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item className="fs-5">
+                <NavDropdown.Item>
                   <NavLink
                     to="/ugcourses"
                     className="fs-5 text-decoration-none text-secondary"
@@ -57,7 +63,7 @@ function WhiteNavBar() {
                   </NavLink>
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item className="fs-5">
+                <NavDropdown.Item>
                   <NavLink
                     to="/supervision"
                     className="fs-5 text-decoration-none text-secondary"
@@ -67,12 +73,14 @@ function WhiteNavBar() {
                 </NavDropdown.Item>
               </NavDropdown>
 
+              {/* Research Highlights */}
               <NavDropdown
                 title="Research Highlights"
-                id="basic-nav-dropdown3"
-                className="navbar1_link fs-5 "
+                id="basic-nav-dropdown4"
+                className="navbar1_link fs-5"
               >
-                <NavDropdown.Item className="fs-5">
+                {/* Interests */}
+                <NavDropdown.Item>
                   <NavLink
                     to="/interest"
                     className="fs-5 text-decoration-none text-secondary"
@@ -80,17 +88,113 @@ function WhiteNavBar() {
                     Interests
                   </NavLink>
                 </NavDropdown.Item>
+
                 <NavDropdown.Divider />
-                <NavDropdown.Item className="fs-5">
-                  <NavLink
-                    to="/blog"
-                    className="fs-5 text-decoration-none text-secondary"
+
+                {/* Publications submenu (opens on hover, right side) */}
+                <div
+                  className="publication-dropdown-wrapper"
+                  onMouseEnter={() => setShowPublications(true)}
+                  onMouseLeave={() => setShowPublications(false)}
+                >
+                  <NavDropdown
+                    show={showPublications}
+                    title={
+                      <span className="fs-5 text-secondary text-decoration-none">
+                        Publications
+                      </span>
+                    }
+                    id="publications-dropdown"
+                    className="no-arrow-dropdown dropend"
+                    drop="end"
                   >
-                    Publications
-                  </NavLink>
-                </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <NavLink
+                        to="/books"
+                        className="fs-5 text-decoration-none text-secondary"
+                      >
+                        Books
+                      </NavLink>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <NavLink
+                        to="/machine-learning"
+                        className="fs-5 text-decoration-none text-secondary"
+                      >
+                        Machine Learning
+                      </NavLink>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <NavLink
+                        to="/computer-vision"
+                        className="fs-5 text-decoration-none text-secondary"
+                      >
+                        Computer Vision
+                      </NavLink>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <NavLink
+                        to="/robots"
+                        className="fs-5 text-decoration-none text-secondary"
+                      >
+                        Robots
+                      </NavLink>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <NavLink
+                        to="/welding-process"
+                        className="fs-5 text-decoration-none text-secondary"
+                      >
+                        Welding Process
+                      </NavLink>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <NavLink
+                        to="/predictive-maintenance"
+                        className="fs-5 text-decoration-none text-secondary"
+                      >
+                        Predictive Maintenance
+                      </NavLink>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <NavLink
+                        to="/cognitive-science"
+                        className="fs-5 text-decoration-none text-secondary"
+                      >
+                        Cognitive Science
+                      </NavLink>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <NavLink
+                        to="/nlp"
+                        className="fs-5 text-decoration-none text-secondary"
+                      >
+                        Natural Language Processing
+                      </NavLink>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <NavLink
+                        to="/others"
+                        className="fs-5 text-decoration-none text-secondary"
+                      >
+                        Others
+                      </NavLink>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <NavLink
+                        to="/long-term-goals"
+                        className="fs-5 text-decoration-none text-secondary"
+                      >
+                        Long Term Goals
+                      </NavLink>
+                    </NavDropdown.Item>
+                  </NavDropdown>
+                </div>
+
                 <NavDropdown.Divider />
-                <NavDropdown.Item className="fs-5">
+
+                {/* Grants */}
+                <NavDropdown.Item>
                   <NavLink
                     to="/grants"
                     className="fs-5 text-decoration-none text-secondary"
@@ -100,6 +204,7 @@ function WhiteNavBar() {
                 </NavDropdown.Item>
               </NavDropdown>
 
+              {/* Other Links */}
               <Nav.Link className="hover-shadow navbar1_link fs-5">
                 <NavLink
                   to="/admin"
@@ -108,7 +213,8 @@ function WhiteNavBar() {
                   Administration
                 </NavLink>
               </Nav.Link>
-              <Nav.Link className="hover-shadow navbar1_link fs-5 ">
+
+              <Nav.Link className="hover-shadow navbar1_link fs-5">
                 <NavLink
                   to="/awards"
                   className="fs-5 text-decoration-none text-secondary"
@@ -116,7 +222,8 @@ function WhiteNavBar() {
                   Awards
                 </NavLink>
               </Nav.Link>
-              <Nav.Link className="hover-shadow navbar1_link fs-5 ">
+
+              <Nav.Link className="hover-shadow navbar1_link fs-5">
                 <NavLink
                   to="/others"
                   className="fs-5 text-decoration-none text-secondary"
@@ -124,10 +231,11 @@ function WhiteNavBar() {
                   Others
                 </NavLink>
               </Nav.Link>
+
               <Nav.Link className="hover-shadow navbar1_link fs-5">
                 <NavLink
                   to="/contact"
-                  className="fs-5 text-decoration-none text-secondary "
+                  className="fs-5 text-decoration-none text-secondary"
                 >
                   Contact Us
                 </NavLink>

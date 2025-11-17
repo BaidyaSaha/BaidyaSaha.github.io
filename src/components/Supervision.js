@@ -186,9 +186,13 @@ function Supervision() {
             <Card className="container c4_mascard1 border-top-0  border-end-0 border-start-0 rounded-0">
               <Card.Body className="c4_subtext  w-75">
                 <Card.Title>Gbenro Ketiku</Card.Title>
-                <Card.Text className="text-danger">Recipient of Canada Graduate Research Scholarship – Master’s program (CGS - M), $27000</Card.Text>
+                <Card.Text className="text-danger">
+                  Recipient of Canada Graduate Research Scholarship – Master’s
+                  program (CGS - M), $27000
+                </Card.Text>
                 <Card.Subtitle className="mb-2 text-muted me-3 mt-3 mb-3">
-                  Master of Science (MSc) in Information Technology (In Progress)
+                  Master of Science (MSc) in Information Technology (In
+                  Progress)
                 </Card.Subtitle>
                 <Card.Subtitle className="mb-2 text-muted me-3 mt-3 mb-3">
                   Sep, 25 - Dec, 26{" "}
@@ -197,8 +201,9 @@ function Supervision() {
                   <p className="c4_mastext">
                     Concordia University of Edmonton (CUE), Alberta, Canada
                   </p>
-                  <em>Thesis title:</em> KNIGHT: Knowledge Graph Integration with Natural Language and Image Segmentation
-for Grounded Hybrid Tasks in Disease Diagnosis and Treatment
+                  <em>Thesis title:</em> KNIGHT: Knowledge Graph Integration
+                  with Natural Language and Image Segmentation for Grounded
+                  Hybrid Tasks in Disease Diagnosis and Treatment
                   <br />
                   <em>Present Position:</em> MSc Student, CUE
                 </Card.Text>
@@ -209,7 +214,8 @@ for Grounded Hybrid Tasks in Disease Diagnosis and Treatment
               <Card.Body className="c4_subtext  w-75">
                 <Card.Title>Soyinka Oluwakayode</Card.Title>
                 <Card.Subtitle className="mb-2 text-muted me-3 mt-3 mb-3">
-                  Master of Science (MSc) in Information Technology (In Progress)
+                  Master of Science (MSc) in Information Technology (In
+                  Progress)
                 </Card.Subtitle>
                 <Card.Subtitle className="mb-2 text-muted me-3 mt-3 mb-3">
                   Sep, 25 - Dec, 26{" "}
@@ -218,8 +224,9 @@ for Grounded Hybrid Tasks in Disease Diagnosis and Treatment
                   <p className="c4_mastext">
                     Concordia University of Edmonton (CUE), Alberta, Canada
                   </p>
-                  <em>Thesis title:</em> MIVA-KNIGHT: Multimodal Industrial Voice Assistant with Knowledge-Integrated
-Intelligence for Hybrid Tasks.
+                  <em>Thesis title:</em> MIVA-KNIGHT: Multimodal Industrial
+                  Voice Assistant with Knowledge-Integrated Intelligence for
+                  Hybrid Tasks.
                   <br />
                   <em>Present Position:</em> MSc Student, CUE
                 </Card.Text>
@@ -230,7 +237,10 @@ Intelligence for Hybrid Tasks.
             <Card className="container c4_mascard1 border-top-0  border-end-0 border-start-0 rounded-0">
               <Card.Body className="c4_subtext  w-75">
                 <Card.Title>Daxit Himmatbhai Surani</Card.Title>
-                <Card.Text className="text-danger">Recipient of Alberta Innovates Graduate Student Scholarship (AI - GSS)</Card.Text>
+                <Card.Text className="text-danger">
+                  Recipient of Alberta Innovates Graduate Student Scholarship
+                  (AI - GSS)
+                </Card.Text>
                 <Card.Subtitle className="mb-2 text-muted me-3 mt-3 mb-3">
                   Master of Science (MSc) in Information Technology (Completed)
                 </Card.Subtitle>
@@ -252,7 +262,10 @@ Intelligence for Hybrid Tasks.
             <Card className="container c4_mascard1 border-top-0  border-end-0 border-start-0 rounded-0">
               <Card.Body className="c4_subtext  w-75">
                 <Card.Title>Manoj Kumar Yasangi</Card.Title>
-                <Card.Text className="text-danger">Recipient of Alberta Innovates Graduate Student Scholarship (AI - GSS)</Card.Text>
+                <Card.Text className="text-danger">
+                  Recipient of Alberta Innovates Graduate Student Scholarship
+                  (AI - GSS)
+                </Card.Text>
                 <Card.Subtitle className="mb-2 text-muted me-3 mt-3 mb-3">
                   Master of Science (MSc) in Information Technology (Completed)
                 </Card.Subtitle>
@@ -354,11 +367,14 @@ Intelligence for Hybrid Tasks.
                 </Card.Text>
               </Card.Body>
             </Card>
-<h5  className="mt-3">2023</h5>
+            <h5 className="mt-3">2023</h5>
             <Card className="container c4_mascard1 border-top-0  border-end-0 border-start-0 rounded-0">
               <Card.Body className="c4_subtext  w-75">
                 <Card.Title>Shwetaben Siddhpura</Card.Title>
-                <Card.Text className="text-danger">Recipient of Alberta Graduate Excellence Scholarship (AGES), $11,000</Card.Text>
+                <Card.Text className="text-danger">
+                  Recipient of Alberta Graduate Excellence Scholarship (AGES),
+                  $11,000
+                </Card.Text>
                 <Card.Subtitle className="mb-2 text-muted me-3 mt-3 mb-3">
                   Master of Science (MSc) in Information Technology (Completed)
                 </Card.Subtitle>
@@ -380,7 +396,10 @@ Intelligence for Hybrid Tasks.
             <Card className="container c4_mascard1 border-top-0  border-end-0 border-start-0 rounded-0">
               <Card.Body className="c4_subtext  w-75">
                 <Card.Title>Dharaben Wagh</Card.Title>
-                <Card.Text className="text-danger">Recipient of Alberta Innovates Graduate Student Scholarship (AI - GSS)</Card.Text>
+                <Card.Text className="text-danger">
+                  Recipient of Alberta Innovates Graduate Student Scholarship
+                  (AI - GSS)
+                </Card.Text>
                 <Card.Subtitle className="mb-2 text-muted me-3 mt-3 mb-3">
                   Master of Science (MSc) in Information Technology (Completed)
                 </Card.Subtitle>
@@ -403,7 +422,10 @@ Intelligence for Hybrid Tasks.
             <Card className="container c4_mascard1 border-top-0  border-end-0 border-start-0 rounded-0">
               <Card.Body className="c4_subtext  w-75">
                 <Card.Title>Pavan Sarvaiya</Card.Title>
-                <Card.Text className="text-danger">Recipient of Alberta Innovates Graduate Student Scholarship (AI - GSS)</Card.Text>
+                <Card.Text className="text-danger">
+                  Recipient of Alberta Innovates Graduate Student Scholarship
+                  (AI - GSS)
+                </Card.Text>
                 <Card.Subtitle className="mb-2 text-muted me-3 mt-3 mb-3">
                   Master of Science (MSc) in Information Technology (Completed)
                 </Card.Subtitle>
@@ -535,7 +557,10 @@ Intelligence for Hybrid Tasks.
             <Card className="container c4_mascard1 border-top-0  border-end-0 border-start-0 rounded-0">
               <Card.Body className="c4_subtext  w-75">
                 <Card.Title>Tatva Joshi</Card.Title>
-                <Card.Text className="text-danger">Recipient of Alberta Graduate Excellence Scholarship (AGES), $11,000</Card.Text>
+                <Card.Text className="text-danger">
+                  Recipient of Alberta Graduate Excellence Scholarship (AGES),
+                  $11,000
+                </Card.Text>
                 <Card.Subtitle className="mb-2 text-muted me-3 mt-3 mb-3">
                   Master of Science (MSc) in Information Technology (Completed)
                 </Card.Subtitle>
@@ -558,7 +583,10 @@ Intelligence for Hybrid Tasks.
             <Card className="container c4_mascard1 border-top-0  border-end-0 border-start-0 rounded-0">
               <Card.Body className="c4_subtext  w-75">
                 <Card.Title>Shahenoor Radhanpuri</Card.Title>
-                <Card.Text className="text-danger">Recipient of Alberta Innovates Graduate Student Scholarship (AI - GSS)</Card.Text>
+                <Card.Text className="text-danger">
+                  Recipient of Alberta Innovates Graduate Student Scholarship
+                  (AI - GSS)
+                </Card.Text>
                 <Card.Subtitle className="mb-2 text-muted me-3 mt-3 mb-3">
                   Master of Science (MSc) in Information Technology (Completed)
                 </Card.Subtitle>
@@ -581,7 +609,10 @@ Intelligence for Hybrid Tasks.
             <Card className="container c4_mascard1 border-top-0  border-end-0 border-start-0 rounded-0">
               <Card.Body className="c4_subtext  w-75">
                 <Card.Title>Ramya Nekkanti</Card.Title>
-                <Card.Text className="text-danger">Recipient of Alberta Innovates Graduate Student Scholarship (AI - GSS)</Card.Text>
+                <Card.Text className="text-danger">
+                  Recipient of Alberta Innovates Graduate Student Scholarship
+                  (AI - GSS)
+                </Card.Text>
                 <Card.Subtitle className="mb-2 text-muted me-3 mt-3 mb-3">
                   Master of Science (MSc) in Information Technology (Completed)
                 </Card.Subtitle>
@@ -753,7 +784,10 @@ Intelligence for Hybrid Tasks.
             <Card className="container c4_mascard1 border-top-0  border-end-0 border-start-0 rounded-0">
               <Card.Body className="c4_subtext  w-75">
                 <Card.Title>Raghavkumar Thakkar</Card.Title>
-                <Card.Text className="text-danger">Recipient of the Governor General’s Gold Medal for Best Master’s Thesis, Concordia University of Edmonton</Card.Text>
+                <Card.Text className="text-danger">
+                  Recipient of the Governor General’s Gold Medal for Best
+                  Master’s Thesis, Concordia University of Edmonton
+                </Card.Text>
                 <Card.Subtitle className="mb-2 text-muted me-3 mt-3 mb-3">
                   Master of Science (MSc) in Information Technology (Completed)
                 </Card.Subtitle>
@@ -774,7 +808,10 @@ Intelligence for Hybrid Tasks.
             <Card className="container c4_mascard1 border-top-0  border-end-0 border-start-0 rounded-0">
               <Card.Body className="c4_subtext  w-75">
                 <Card.Title>Kathan Trivedi</Card.Title>
-                <Card.Text className="text-danger">Recipient of Alberta Graduate Excellence Scholarship (AGES), $11,000</Card.Text>
+                <Card.Text className="text-danger">
+                  Recipient of Alberta Graduate Excellence Scholarship (AGES),
+                  $11,000
+                </Card.Text>
                 <Card.Subtitle className="mb-2 text-muted me-3 mt-3 mb-3">
                   Master of Science (MSc) in Information Technology (Completed)
                 </Card.Subtitle>
@@ -839,7 +876,10 @@ Intelligence for Hybrid Tasks.
             <Card className="container border-top-0  border-end-0 border-start-0 c4_doccard rounded-0">
               <Card.Body className="c4_subtext w-75">
                 <Card.Title>Ali Boukrich</Card.Title>
-                <Card.Text className="text-danger">Recipient of Canada Graduate Research Scholarship – Master’s program (CGS - M), $27000</Card.Text>
+                <Card.Text className="text-danger">
+                  Recipient of Canada Graduate Research Scholarship – Master’s
+                  program (CGS - M), $27000
+                </Card.Text>
                 <Card.Subtitle className="mb-2 text-muted me-3 mt-3 mb-3">
                   Master of Science (MSc) in Information Technology (IT)
                 </Card.Subtitle>
@@ -855,11 +895,14 @@ Intelligence for Hybrid Tasks.
                 </Card.Text>
               </Card.Body>
             </Card>
-            <h5  className="mt-3">2020</h5>
+            <h5 className="mt-3">2020</h5>
             <Card className="container c4_mascard1 border-top-0  border-end-0 border-start-0  rounded-0">
               <Card.Body className="c4_subtext w-75">
                 <Card.Title>Rene Avalloni de Morais</Card.Title>
-                <Card.Text className="text-danger">Recipient of Alberta Graduate Excellence Scholarship (AGES), $11,000</Card.Text>
+                <Card.Text className="text-danger">
+                  Recipient of Alberta Graduate Excellence Scholarship (AGES),
+                  $11,000
+                </Card.Text>
                 <Card.Subtitle className="mb-2 text-muted me-3 mt-3 mb-3">
                   Master of Science (MSc) in Information Technology (IT)
                 </Card.Subtitle>
@@ -899,7 +942,10 @@ Intelligence for Hybrid Tasks.
             <Card className="container c4_mascard1 border-top-0  border-end-0 border-start-0 rounded-0">
               <Card.Body className="c4_subtext  w-75">
                 <Card.Title>Adeola Ayandeyi</Card.Title>
-                <Card.Text className="text-danger">Recipient of the Governor General’s Gold Medal for Best Master’s Thesis, Concordia University of Edmonton</Card.Text>
+                <Card.Text className="text-danger">
+                  Recipient of the Governor General’s Gold Medal for Best
+                  Master’s Thesis, Concordia University of Edmonton
+                </Card.Text>
                 <Card.Subtitle className="mb-2 text-muted me-3 mt-3 mb-3">
                   Master of Science (MSc) in Information Technology (IT)
                 </Card.Subtitle>
@@ -1091,6 +1137,7 @@ Intelligence for Hybrid Tasks.
                   </p>
                   <em>Project title:</em> SymptoSync: An AI-Powered Platform for
                   Managing PCOS and Women’s Health
+                  <br />
                   <em>Present Postion:</em> Founder, Symptosync
                 </Card.Text>
               </Card.Body>
@@ -1110,6 +1157,7 @@ Intelligence for Hybrid Tasks.
                   </p>
                   <em>Project title:</em> BotanicalD: Plant Identification and
                   Optimal Growth Condi- tion Analysis Tool
+                  <br />
                   <em>Present Postion:</em> Technical Support Representative,
                   Rogers Communications
                 </Card.Text>
@@ -1130,6 +1178,7 @@ Intelligence for Hybrid Tasks.
                   </p>
                   <em>Project title:</em> Fruit Detection and Nutritional
                   Analysis Using Google Cloud Vision API and Machine Learning
+                  <br />
                   <em>Present Postion:</em> Cashier, A&W Food Services of Canada
                   Inc.
                 </Card.Text>
@@ -1151,6 +1200,7 @@ Intelligence for Hybrid Tasks.
                   <em>Project title:</em> Developing an E-Commerce Platform for
                   School Merchandise: A Data-Driven Approach Using HTML, CSS,
                   and JavaScript
+                  <br />
                   <em>Present Postion:</em> Cashier, Walmart
                 </Card.Text>
               </Card.Body>
@@ -1171,6 +1221,7 @@ Intelligence for Hybrid Tasks.
                   <em>Project title:</em> Enhancing University Student
                   Well-Being Through Digital Counseling Services and Mental
                   Health Awareness Initiatives
+                  <br />
                   <em>Present Postion:</em> Software Engineer
                 </Card.Text>
               </Card.Body>
@@ -1179,7 +1230,10 @@ Intelligence for Hybrid Tasks.
             <Card className="container border-top-0  border-end-0 border-start-0 c4_doccard rounded-0">
               <Card.Body className="c4_subtext w-75">
                 <Card.Title>Gbenro Ketiku</Card.Title>
-                <Card.Text className="text-danger">Recipient of NSERC Undergraduate Student Research Awards (USRA) 2023, 2024</Card.Text>
+                <Card.Text className="text-danger">
+                  Recipient of NSERC Undergraduate Student Research Awards
+                  (USRA) 2023, 2024
+                </Card.Text>
                 <Card.Subtitle className="mb-2 text-muted me-3 mt-3 mb-3">
                   Bachelor of Science (BSc) in Information Technology (IT)
                 </Card.Subtitle>
@@ -1196,6 +1250,7 @@ Intelligence for Hybrid Tasks.
                   (USRA, 2024) & Design and develop a mobile application for
                   locating and reporting lost and found items within the univer-
                   sity campus (Undergraduate Thesis)
+                  <br />
                   <em>Present Postion:</em> Quality Assurance Tester, Dough
                   Dough Digital Inc.
                 </Card.Text>
@@ -1216,6 +1271,7 @@ Intelligence for Hybrid Tasks.
                   </p>
                   <em>Project title:</em> Improved Multifactor Authentication
                   with Machine Learning: A Novel Approach to Improve Safety
+                  <br />
                   <em>Present Postion:</em> Software Engineer
                 </Card.Text>
               </Card.Body>
@@ -1236,6 +1292,7 @@ Intelligence for Hybrid Tasks.
                   <em>Project title:</em> Artificial Intelligence in Healthcare:
                   Developing a Fitness App for Personalized Nutrition and
                   Exercise Tracking
+                  <br />
                   <em>Present Postion:</em> Assistant Manager, Kurves Beauty Bar
                 </Card.Text>
               </Card.Body>
@@ -1256,6 +1313,7 @@ Intelligence for Hybrid Tasks.
                   <em>Project title:</em> Mobile Apps for Fruit and Vegetable
                   Detection to Improve Re- tail Store Billing System Automation
                   Using Lightweight Deep Learning Models
+                  <br />
                   <em>Present Postion:</em> System Consultant - Enoch Cree
                   Nation, Long View Systems
                 </Card.Text>
@@ -1276,6 +1334,7 @@ Intelligence for Hybrid Tasks.
                   </p>
                   <em>Project title:</em> The Impact of Web Technologies on
                   Daily Life: Developing a Weather Web-App Using JavaScript API
+                  <br />
                   <em>Present Postion:</em> Data Analyst Solutions Pvt Ltd
                 </Card.Text>
               </Card.Body>
@@ -1295,6 +1354,7 @@ Intelligence for Hybrid Tasks.
                     Concordia University of Edmonton (CUE), Alberta, Canada
                   </p>
                   <em>Project title:</em> Sentiment Analysis from Text Data
+                  <br />
                   <em>Present Postion:</em> SDE (AI/ML), AriveGuru Technology
                   Solutions Pvt Ltd
                 </Card.Text>
@@ -1313,6 +1373,7 @@ Intelligence for Hybrid Tasks.
                   <p className="c4_mastext">
                     Concordia University of Edmonton (CUE), Alberta, Canada
                   </p>
+                  <br />
                   <em>Project title:</em> Fuzzy String Matching and its
                   application in Natural Language Processing
                 </Card.Text>
@@ -1351,6 +1412,8 @@ Intelligence for Hybrid Tasks.
                   <p className="c4_mastext">Chandigarh University</p>
                   <em>Project title:</em> Deep Learning for COVID Induced
                   Pneumonia Detection from Chest X-ray
+                  <br />
+                  <em>Present Postion:</em> Student, Chandigarh University
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -1368,6 +1431,9 @@ Intelligence for Hybrid Tasks.
                   <p className="c4_mastext">Chandigarh University</p>
                   <em>Project title:</em> ADeep Learning for Audio sentiment
                   Analysis
+                  <br />
+                  <em>Present Postion:</em> Associate Lead Data Scientist, Bajaj
+                  Finserv
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -1384,6 +1450,9 @@ Intelligence for Hybrid Tasks.
                 <Card.Text>
                   <p className="c4_mastext">Chandigarh University</p>
                   <em>Project title:</em> Sentiment Analysis from Text Data
+                  <br />
+                  <em>Present Postion:</em> SDE (AI/ML), AriveGuru Technology
+                  Solutions Pvt Ltd
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -1391,7 +1460,10 @@ Intelligence for Hybrid Tasks.
             <Card className="container c4_mascard1 border-top-0  border-end-0 border-start-0 rounded-0">
               <Card.Body className="c4_subtext w-75">
                 <Card.Title>Ali Boukrich</Card.Title>
-                <Card.Text className="text-danger">Recipient of NSERC Undergraduate Student Research Awards (USRA) 2021</Card.Text>
+                <Card.Text className="text-danger">
+                  Recipient of NSERC Undergraduate Student Research Awards
+                  (USRA) 2021
+                </Card.Text>
                 <Card.Subtitle className="mb-2 text-muted me-3 mt-3 mb-3">
                   Bachelor of Science (BSc) in Information Technology (IT)
                 </Card.Subtitle>
@@ -1402,7 +1474,8 @@ Intelligence for Hybrid Tasks.
                   <p className="c4_mastext">
                     Concordia University of Edmonton (CUE), Alberta, Canada
                   </p>
-                  <em>Project title:</em> Unifying Epidemiological and AI Modelling for Monitoring and Tracking Infectious Diseases
+                  <em>Project title:</em> Unifying Epidemiological and AI
+                  Modelling for Monitoring and Tracking Infectious Diseases
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -1422,6 +1495,8 @@ Intelligence for Hybrid Tasks.
                   <em>Project title:</em> Developing a virtual machine learning
                   driven cook book for finding optimized recipe for different
                   dishes based on the available ingredients
+                  <br />
+                  <em>Present Postion:</em> Software Developer, Elev, Edmonton
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -1441,6 +1516,9 @@ Intelligence for Hybrid Tasks.
                   </p>
                   <em>Project title:</em> Developing privacy preserving machine
                   learning model for sensitive big data applications
+                  <br />
+                  <em>Present Postion:</em> IT Technical Support, Election
+                  Alberta
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -1461,6 +1539,9 @@ Intelligence for Hybrid Tasks.
                   <em>Project title:</em> Developing an interactive and robust
                   machine learning driven chatbot to help in self assessments of
                   the patient having covid-19 symptoms
+                  <br />
+                  <em>Present Postion:</em> Production Associate, Canada Bread
+                  Company, Limited
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -1481,6 +1562,7 @@ Intelligence for Hybrid Tasks.
                   <em>Project title:</em> Design and implementation of a
                   controller with force feedback for insertion task in a
                   industrial robot
+                  <br />
                   <em>Present Postion:</em> Leader of Autodesk Specialization
                   Services, CiiSA - Con- sultoría Integral de Informática
                 </Card.Text>
@@ -1503,6 +1585,7 @@ Intelligence for Hybrid Tasks.
                   <em>Thesis title:</em>Gas Metal Arc Welding (GMAW) sequence
                   optimization for an agricultural component using artificial
                   intelligence algorithms
+                  <br />
                   <em>Present Position:</em> Engineer, Culiacán, Mexico
                 </Card.Text>
               </Card.Body>

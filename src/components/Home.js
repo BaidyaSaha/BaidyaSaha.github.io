@@ -19,6 +19,9 @@ import Card from "react-bootstrap/Card";
 import { Button, Container, Image } from "react-bootstrap";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import cv from "./image/BaidyaCV_Canada.pdf";
+import anotherCV from "./image/CCV-Baidya_NathSaha (2).pdf";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 import { NavLink } from "react-router-dom";
 import WhiteNavBar from "./WhiteNavBar";
@@ -27,6 +30,280 @@ function Home() {
   return (
     <>
       <WhiteNavBar />
+
+      {/*----------------------------------------------Socials Section-------------------------------------------*/}
+      <Container fluid className="bg-light py-3 border-bottom">
+        <Container>
+          <Row className="justify-content-center align-items-center">
+            <Col xs="auto">
+              <div className="d-flex gap-4 align-items-center flex-wrap justify-content-center">
+                <a
+                  href="https://scholar.google.com/citations?user=HkY4OJgAAAAJ&hl=en"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-decoration-none text-dark"
+                  title="Google Scholar"
+                >
+                  <i className="bi bi-google fs-4"></i>
+                  <span className="ms-2 d-none d-sm-inline">
+                    Google Scholar
+                  </span>
+                </a>
+
+                <div
+                  className="vr d-none d-sm-block"
+                  style={{ height: "30px" }}
+                ></div>
+                <a
+                  href="https://www.linkedin.com/in/baidya-nath-saha-55a40939/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-decoration-none text-dark"
+                  title="LinkedIn"
+                >
+                  <i className="bi bi-linkedin fs-4"></i>
+                  <span className="ms-2 d-none d-sm-inline">LinkedIn</span>
+                </a>
+
+                <div
+                  className="vr d-none d-sm-block"
+                  style={{ height: "30px" }}
+                ></div>
+
+                <a
+                  href="https://www.researchgate.net/profile/Baidya_Saha"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-decoration-none text-dark"
+                  title="ResearchGate"
+                >
+                  <i className="bi bi-journal-text fs-4"></i>
+                  <span className="ms-2 d-none d-sm-inline">ResearchGate</span>
+                </a>
+
+                <div
+                  className="vr d-none d-sm-block"
+                  style={{ height: "30px" }}
+                ></div>
+
+                <a
+                  href="https://independent.academia.edu/BaidyaNathSaha"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-decoration-none text-dark"
+                  title="academia.edu"
+                >
+                  <i className="bi bi-person-badge fs-4"></i>
+                  <span className="ms-2 d-none d-sm-inline">ACADEMIA</span>
+                </a>
+
+                <div
+                  className="vr d-none d-sm-block"
+                  style={{ height: "30px" }}
+                ></div>
+
+                <a
+                  href="https://github.com/BaidyaSaha"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-decoration-none text-dark"
+                  title="GitHub"
+                >
+                  <i className="bi bi-github fs-4"></i>
+                  <span className="ms-2 d-none d-sm-inline">GitHub</span>
+                </a>
+
+                <div
+                  className="vr d-none d-sm-block"
+                  style={{ height: "30px" }}
+                ></div>
+                <a
+                  href="mailto:baidya.saha@concordia.ab.ca"
+                  className="text-decoration-none text-dark"
+                  title="Email"
+                >
+                  <i className="bi bi-envelope fs-4"></i>
+                  <span className="ms-2 d-none d-sm-inline">Email</span>
+                </a>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </Container>
+
+      {/*----------------------------------------------Documents Section-------------------------------------------*/}
+      <Container
+        fluid
+        className="py-4 home_headercard"
+        style={
+          {
+            // background: rgb(52, 52, 52),
+          }
+        }
+      >
+        <Container>
+          <Row className="justify-content-center g-3">
+            {[
+              {
+                title: "CV",
+                icon: "file-earmark-person",
+                path: cv,
+              },
+              {
+                title: "Leadership Philosophy",
+                icon: "trophy",
+                path: anotherCV,
+              },
+              {
+                title: "Research Statement",
+                icon: "lightbulb",
+                path: "/path-to-research.pdf",
+                subItems: [
+                  { name: "Industry 4.0", icon: "lightbulb", path: cv },
+                  {
+                    name: "Natural Language Processing",
+                    icon: "lightbulb",
+                    path: anotherCV,
+                  },
+                  {
+                    name: "Computer Vision & Image Processing",
+                    icon: "lightbulb",
+                    path: "/path-to-R3.pdf",
+                  },
+                ],
+              },
+              {
+                title: "Teaching Statement",
+                icon: "book",
+                path: "/path-to-teaching.pdf",
+              },
+              {
+                title: "Diversity Statement",
+                icon: "people",
+                path: "/path-to-diversity.pdf",
+              },
+            ].map((doc, idx) => (
+              <Col xs={6} sm={4} md={2} key={idx} className="position-relative">
+                <div className="document-wrapper">
+                  <a
+                    href={doc.path}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-decoration-none"
+                  >
+                    <Card
+                      className="text-center h-100 border-0 shadow-sm hover-card"
+                      style={{ transition: "transform 0.2s" }}
+                    >
+                      <Card.Body className="p-3">
+                        <i
+                          className={`bi bi-${doc.icon} fs-1 text-primary mb-2`}
+                        ></i>
+                        <Card.Text className="mb-0 small fw-semibold text-dark">
+                          {doc.title}
+                        </Card.Text>
+                      </Card.Body>
+                    </Card>
+                  </a>
+
+                  {/* Sub-items popup */}
+                  {doc.subItems && (
+                    <div className="sub-items-popup">
+                      {doc.subItems.map((subItem, subIdx) => (
+                        <a
+                          key={subIdx}
+                          href={subItem.path}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-decoration-none sub-item-link"
+                        >
+                          <Card className="text-center border shadow-sm sub-item-card">
+                            <Card.Body className="p-3 d-flex flex-column align-items-center justify-content-center">
+                              <i
+                                className={`bi bi-${subItem.icon} fs-1 text-primary mb-2`}
+                              ></i>
+                              <Card.Text className="mb-0 fw-semibold text-dark">
+                                {subItem.name}
+                              </Card.Text>
+                            </Card.Body>
+                          </Card>
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </Col>
+            ))}
+          </Row>
+        </Container>
+      </Container>
+
+      <style jsx>{`
+        .document-wrapper {
+          position: relative;
+        }
+
+        .sub-items-popup {
+          display: none;
+          position: absolute;
+          top: 80%;
+          left: 50%;
+          transform: translateX(-50%);
+          z-index: 1000;
+          margin-top: 10px;
+          gap: 12px;
+          opacity: 0;
+          transition: opacity 0.3s ease;
+          pointer-events: none;
+          padding: 10px;
+        }
+
+        .document-wrapper:hover .sub-items-popup {
+          display: flex;
+          opacity: 1;
+          pointer-events: auto;
+        }
+
+        .sub-item-link {
+          display: block;
+          flex: 1;
+        }
+
+        .sub-item-card {
+          width: 200px;
+          height: 150px;
+          transition: transform 0.2s, box-shadow 0.2s;
+          cursor: pointer;
+          background-color: white;
+        }
+
+        .sub-item-card .card-body {
+          height: 100%;
+          padding: 12px 16px !important;
+        }
+
+        .sub-item-card:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+        }
+
+        .sub-item-card .card-text {
+          font-size: 0.85rem;
+          line-height: 1.3;
+          word-wrap: break-word;
+        }
+
+        .hover-card:hover {
+          transform: translateY(-4px);
+        }
+
+        /* Ensure the popup stays visible when hovering over it */
+        .sub-items-popup:hover {
+          display: flex;
+          opacity: 1;
+          pointer-events: auto;
+        }
+      `}</style>
 
       {/*----------------------------------------------Home Nav bar ends-------------------------------------------*/}
 

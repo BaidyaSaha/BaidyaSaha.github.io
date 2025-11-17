@@ -317,7 +317,7 @@ animation: typewriter 3s steps(55) 1s 1 normal both,
 }
 
 .blog_ct{
-  margin-top: 50px;
+  /* margin-top: 50px; */
   padding-top: 20px;
   padding-bottom: 50px;
   margin-bottom: 50px;

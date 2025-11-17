@@ -13,6 +13,7 @@ import Awards from "./components/Awards";
 import Others from "./components/Others";
 import Contact from "./components/Contact";
 import Grants from "./components/Grants";
+import Publications from "./components/Publications";
 
 export function App() {
   return (
@@ -31,6 +32,16 @@ export function App() {
         <Route path="/others" element={<Others />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/grants" element={<Grants />} />
+        <Route path="/books" element={<Publications />} />
+        <Route path="/machine-learning" element={<Publications />} />
+        <Route path="/computer-vision" element={<Publications />} />
+        <Route path="/robots" element={<Publications />} />
+        <Route path="/weilding-process" element={<Publications />} />
+        <Route path="/predictive-maintenance" element={<Publications />} />
+        <Route path="/cognitive-science" element={<Publications />} />
+        <Route path="/nlp" element={<Publications />} />
+        <Route path="/others" element={<Publications />} />
+        <Route path="/long-term-goals" element={<Publications />} />
       </Routes>
     </div>
   );
