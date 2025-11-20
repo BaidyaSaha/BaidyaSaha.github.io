@@ -25,11 +25,14 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 
 import { NavLink } from "react-router-dom";
 import WhiteNavBar from "./WhiteNavBar";
+import Chatbot from "./Chatbot";
 
 function Home() {
   return (
     <>
       <WhiteNavBar />
+
+      <Chatbot />
 
       {/*----------------------------------------------Socials Section-------------------------------------------*/}
       <Container fluid className="bg-light py-3 border-bottom">
