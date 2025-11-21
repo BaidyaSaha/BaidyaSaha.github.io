@@ -39,6 +39,9 @@ const Chatbot = () => {
   }, [messages]);
 
   useEffect(() => {
+    // Capture the current value at effect creation time
+    const synth = synthRef.current;
+
     if ("webkitSpeechRecognition" in window || "SpeechRecognition" in window) {
       const SpeechRecognition =
         window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -71,7 +74,8 @@ const Chatbot = () => {
       if (recognitionRef.current) {
         recognitionRef.current.abort();
       }
-      synthRef.current.cancel();
+      // Use the captured value in cleanup
+      synth.cancel();
     };
   }, []);
 
