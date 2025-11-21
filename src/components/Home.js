@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import Carousel from "react-bootstrap/Carousel";
 
 import image from "./image/white_img.webp";
-import header_img from "./image/linked_profile pic.jpg";
+import header_img from "./image/Baidya.jpg";
 import researchImpactImg from "./image/Baidya Research Impact.jpg";
 import nsercLogo from "./image/NSERC.png";
 import mitacsLogo from "./image/Mitacs_logo.png";
@@ -20,6 +20,7 @@ import { Button, Container, Image } from "react-bootstrap";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import cv from "./image/BaidyaCV_Canada.pdf";
+import header_img2 from "./image/Baidya-1.jpeg";
 import anotherCV from "./image/CCV-Baidya_NathSaha (2).pdf";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
@@ -28,6 +29,20 @@ import WhiteNavBar from "./WhiteNavBar";
 import Chatbot from "./Chatbot";
 
 function Home() {
+  const [currentImage, setCurrentImage] = useState(header_img);
+
+  useEffect(() => {
+    const images = [header_img, header_img2];
+    let index = 0;
+
+    const interval = setInterval(() => {
+      index = (index + 1) % images.length;
+      setCurrentImage(images[index]);
+    }, 5000); // Switch every 5 seconds
+
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, []);
+
   return (
     <>
       <WhiteNavBar />
@@ -446,7 +461,7 @@ function Home() {
           <Col xs={12} md={5}>
             <Card className="home_headercard border-0 h-100 shadow-lg">
               <Card.Img
-                src={header_img}
+                src={currentImage}
                 className="rounded-circle head_img mx-auto mt-5 mb-4"
                 style={{
                   width: "225px",
@@ -454,6 +469,7 @@ function Home() {
                   opacity: 0.5,
                   filter: "alpha(opacity=40)",
                   backgroundColor: "#000",
+                  transition: "opacity 0.5s ease-in-out", // Smooth fade transition
                 }}
               />
               <Card.Body className="text-center text-white p-0">
@@ -495,7 +511,7 @@ function Home() {
               slide={false}
             >
               <Carousel.Item
-                interval={100000}
+                interval={5000}
                 className="overflow-hidden"
                 style={{ height: "550px" }}
               >
@@ -552,7 +568,7 @@ function Home() {
                 </Card>
               </Carousel.Item>
               <Carousel.Item
-                interval={100000}
+                interval={5000}
                 className="overflow-hidden"
                 style={{ height: "550px" }}
               >
@@ -628,7 +644,7 @@ function Home() {
                 </Card>
               </Carousel.Item>
               <Carousel.Item
-                interval={100000}
+                interval={5000}
                 className="overflow-hidden"
                 style={{ height: "550px" }}
               >
@@ -680,7 +696,7 @@ function Home() {
                 </Card>
               </Carousel.Item>
               <Carousel.Item
-                interval={100000}
+                interval={5000}
                 className="overflow-hidden"
                 style={{ height: "550px" }}
               >
@@ -717,7 +733,7 @@ function Home() {
                 </Card>
               </Carousel.Item>
               <Carousel.Item
-                interval={100000}
+                interval={5000}
                 className="overflow-hidden"
                 style={{ height: "550px" }}
               >

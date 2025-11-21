@@ -1,5 +1,14 @@
 import React, { useState, useRef, useEffect } from "react";
-import { MessageCircle, X, Send, Minimize2 } from "lucide-react";
+import {
+  MessageCircle,
+  X,
+  Send,
+  Minimize2,
+  Mic,
+  MicOff,
+  Volume2,
+  VolumeX,
+} from "lucide-react";
 
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,7 +23,12 @@ const Chatbot = () => {
   ]);
   const [inputMessage, setInputMessage] = useState("");
   const [isTyping, setIsTyping] = useState(false);
+  const [isListening, setIsListening] = useState(false);
+  const [isSpeaking, setIsSpeaking] = useState(false);
+  const [autoSpeak, setAutoSpeak] = useState(true);
   const messagesEndRef = useRef(null);
+  const recognitionRef = useRef(null);
+  const synthRef = useRef(window.speechSynthesis);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -24,132 +38,173 @@ const Chatbot = () => {
     scrollToBottom();
   }, [messages]);
 
+  useEffect(() => {
+    if ("webkitSpeechRecognition" in window || "SpeechRecognition" in window) {
+      const SpeechRecognition =
+        window.SpeechRecognition || window.webkitSpeechRecognition;
+      recognitionRef.current = new SpeechRecognition();
+      recognitionRef.current.continuous = false;
+      recognitionRef.current.interimResults = true;
+      recognitionRef.current.lang = "en-US";
+
+      recognitionRef.current.onresult = (event) => {
+        const transcript = Array.from(event.results)
+          .map((result) => result[0].transcript)
+          .join("");
+        setInputMessage(transcript);
+        if (event.results[0].isFinal) {
+          setIsListening(false);
+        }
+      };
+
+      recognitionRef.current.onerror = (event) => {
+        console.error("Speech recognition error:", event.error);
+        setIsListening(false);
+      };
+
+      recognitionRef.current.onend = () => {
+        setIsListening(false);
+      };
+    }
+
+    return () => {
+      if (recognitionRef.current) {
+        recognitionRef.current.abort();
+      }
+      synthRef.current.cancel();
+    };
+  }, []);
+
+  const toggleListening = () => {
+    if (!recognitionRef.current) {
+      alert(
+        "Speech recognition is not supported in your browser. Please use Chrome or Edge."
+      );
+      return;
+    }
+
+    if (isListening) {
+      recognitionRef.current.stop();
+      setIsListening(false);
+    } else {
+      synthRef.current.cancel();
+      setIsSpeaking(false);
+      recognitionRef.current.start();
+      setIsListening(true);
+    }
+  };
+
+  const speakText = (text) => {
+    if (!synthRef.current) return;
+    synthRef.current.cancel();
+    const cleanText = text.replace(/[•\n]/g, ". ").replace(/\s+/g, " ");
+    const utterance = new SpeechSynthesisUtterance(cleanText);
+    utterance.rate = 1;
+    utterance.pitch = 1;
+    utterance.onstart = () => setIsSpeaking(true);
+    utterance.onend = () => setIsSpeaking(false);
+    utterance.onerror = () => setIsSpeaking(false);
+    synthRef.current.speak(utterance);
+  };
+
+  const stopSpeaking = () => {
+    synthRef.current.cancel();
+    setIsSpeaking(false);
+  };
+
   const getBotResponse = (userMessage) => {
     const lowerMessage = userMessage.toLowerCase();
-
-    // Teaching-related responses
     if (
       lowerMessage.includes("teaching") &&
       (lowerMessage.includes("interest") || lowerMessage.includes("philosophy"))
     ) {
-      return "Dr. Saha's teaching philosophy emphasizes creating a constructive, interactive, cooperative, and collaborative environment that facilitates learning with great enthusiasm. He believes in actively engaging students in the learning process.";
+      return "Dr. Saha's teaching philosophy emphasizes creating a constructive, interactive, cooperative, and collaborative environment that facilitates learning with great enthusiasm.";
     } else if (
       lowerMessage.includes("teach") ||
       lowerMessage.includes("course") ||
       lowerMessage.includes("pg") ||
       lowerMessage.includes("ug")
     ) {
-      return "Dr. Saha teaches both Graduate (PG) and Undergraduate (UG) courses at Concordia University of Edmonton, Canada. He has extensive experience in teaching computer science and IT courses at various levels.";
+      return "Dr. Saha teaches both Graduate and Undergraduate courses at Concordia University of Edmonton, Canada. He has extensive experience in teaching computer science and IT courses.";
     } else if (
       lowerMessage.includes("supervis") ||
       lowerMessage.includes("student") ||
       lowerMessage.includes("mentor")
     ) {
-      return "Dr. Saha has had the opportunity to mentor thirty-five (35) trainees having multidisciplinary backgrounds from multiple institutions. He provides comprehensive supervision to graduate and undergraduate students.";
-    }
-    // Research-related responses
-    else if (
+      return "Dr. Saha has mentored thirty-five trainees with multidisciplinary backgrounds from multiple institutions.";
+    } else if (
       lowerMessage.includes("research") &&
       lowerMessage.includes("interest")
     ) {
-      return "Dr. Saha's research interests include:\n• Industry 4.0/5.0/6.0\n• Artificial Intelligence/Machine Learning\n• Computer Vision/Robotics\n• Natural Language Processing\n• Software Reliability/Quality Engineering\n\nHis work spans across multiple cutting-edge domains in computer science.";
+      return "Dr. Saha's research interests include: Industry 4.0/5.0/6.0, Artificial Intelligence and Machine Learning, Computer Vision and Robotics, Natural Language Processing, and Software Reliability Engineering.";
     } else if (
       lowerMessage.includes("publication") ||
       lowerMessage.includes("paper") ||
       lowerMessage.includes("citation")
     ) {
-      return "Dr. Saha's research articles have received 510+ Google Scholar citations and 9,823 reads on ResearchGate. His present h-index is 9, i10-index is 9, and RG score is 14.15. His work has made significant impact in the research community.";
-    }
-    // Education responses
-    else if (
+      return "Dr. Saha's research has received over 510 Google Scholar citations. His h-index is 9, i10-index is 9, and RG score is 14.15.";
+    } else if (
       lowerMessage.includes("education") ||
       lowerMessage.includes("degree") ||
       lowerMessage.includes("phd")
     ) {
-      return "Dr. Saha holds:\n• Ph.D. in Computer Science from University of Alberta, Canada\n• Master of Technology in Computer Science from Indian Statistical Institute, India\n• Master of Technology in Quality, Reliability & Operations Research from Indian Statistical Institute, India\n• Bachelor of Mechanical Engineering from Jadavpur University, India";
-    }
-    // Employment/Position responses
-    else if (
+      return "Dr. Saha holds a PhD in Computer Science from University of Alberta, two Master's degrees from Indian Statistical Institute, and a Bachelor's in Mechanical Engineering from Jadavpur University.";
+    } else if (
       lowerMessage.includes("position") ||
       lowerMessage.includes("job") ||
       lowerMessage.includes("work") ||
       lowerMessage.includes("employ")
     ) {
-      return "Dr. Saha is currently:\n• Associate Professor (July 2022 - Present) at Concordia University of Edmonton\n• Previously: Assistant Professor (July 2019 - June 2022) at Concordia University of Edmonton\n• He also served as Chair of Mathematical and Physical Sciences, Program Director of MScIT program, and Coordinator of IT Program (July 2021 - June 2024)\n• Previously worked as Assistant Professor at CIMAT, Mexico (August 2014 - June 2019)";
-    }
-    // Grants and Awards
-    else if (
+      return "Dr. Saha is currently an Associate Professor at Concordia University of Edmonton since July 2022. He previously served as Assistant Professor and held administrative roles including Chair of Mathematical and Physical Sciences.";
+    } else if (
       lowerMessage.includes("grant") ||
       lowerMessage.includes("award") ||
-      lowerMessage.includes("funding") ||
-      lowerMessage.includes("achievement")
+      lowerMessage.includes("funding")
     ) {
-      return "Dr. Saha has received several prestigious grants:\n• NSERC Discovery and Launch Supplement Grant (2020-2027)\n• MITACS Business Strategy Internship (BSI) Grant (2025-2026)\n• NVIDIA Corporation Accelerated Data Science Call for Proposals Award (2019)\n• Basic Science research fund from Conacyt, Mexico (2016-2019)\n• MITACS ACCELERATE internship Award, Canada (2010)";
-    }
-    // Contact information
-    else if (
+      return "Dr. Saha has received several grants including NSERC Discovery Grant, MITACS Business Strategy Internship Grant, and NVIDIA Corporation Award.";
+    } else if (
       lowerMessage.includes("contact") ||
       lowerMessage.includes("email") ||
       lowerMessage.includes("reach")
     ) {
-      return "You can reach Dr. Saha at:\n• Email: baidya.saha@concordia.ab.ca\n• You can also connect via:\n  - Google Scholar\n  - LinkedIn\n  - ResearchGate\n  - Academia.edu\n  - GitHub\n\nAll links are available in the social media section of the website.";
-    }
-    // Administrative roles
-    else if (
-      lowerMessage.includes("admin") ||
-      lowerMessage.includes("chair") ||
-      lowerMessage.includes("director")
-    ) {
-      return "Dr. Saha has served in several administrative roles:\n• Chair of Mathematical and Physical Sciences (July 2021 - June 2024)\n• Program Director of MScIT program (July 2021 - June 2024)\n• Coordinator of IT Program (July 2021 - June 2024)\n\nAll at Concordia University of Edmonton.";
-    }
-    // CV and documents
-    else if (
-      lowerMessage.includes("cv") ||
-      lowerMessage.includes("resume") ||
-      lowerMessage.includes("document")
-    ) {
-      return "Dr. Saha's CV and various academic documents are available on the website, including:\n• CV\n• Leadership Philosophy\n• Research Statements (Industry 4.0, NLP, Computer Vision)\n• Teaching Statement\n• Diversity Statement\n\nYou can access these from the documents section at the top of the homepage.";
-    }
-    // Greetings
-    else if (
+      return "You can reach Dr. Saha at baidya.saha@concordia.ab.ca. He's also available on Google Scholar, LinkedIn, ResearchGate, and GitHub.";
+    } else if (
       lowerMessage.includes("hello") ||
       lowerMessage.includes("hi") ||
       lowerMessage.includes("hey")
     ) {
-      return "Hello! How can I assist you in learning more about Dr. Baidya Nath Saha's academic profile, research, teaching, or achievements?";
+      return "Hello! How can I assist you in learning more about Dr. Baidya Nath Saha's academic profile?";
     } else if (lowerMessage.includes("thank")) {
-      return "You're welcome! Is there anything else you'd like to know about Dr. Saha's work, research, teaching, or background?";
-    }
-    // Default response
-    else {
-      return "I can help you with information about:\n• Research interests and publications\n• Teaching philosophy and courses\n• Education background\n• Employment history\n• Grants and awards\n• Student supervision\n• Contact information\n• Administrative roles\n\nWhat would you like to know?";
+      return "You're welcome! Is there anything else you'd like to know?";
+    } else {
+      return "I can help you with information about research interests, teaching, education, employment, grants, student supervision, and contact information. What would you like to know?";
     }
   };
 
   const handleSendMessage = () => {
     if (inputMessage.trim() === "") return;
-
     const newUserMessage = {
       id: messages.length + 1,
       text: inputMessage,
       sender: "user",
       timestamp: new Date(),
     };
-
     setMessages([...messages, newUserMessage]);
+    const userInput = inputMessage;
     setInputMessage("");
     setIsTyping(true);
 
-    // Simulate bot typing delay
     setTimeout(() => {
+      const responseText = getBotResponse(userInput);
       const botResponse = {
         id: messages.length + 2,
-        text: getBotResponse(inputMessage),
+        text: responseText,
         sender: "bot",
         timestamp: new Date(),
       };
       setMessages((prev) => [...prev, botResponse]);
       setIsTyping(false);
+      if (autoSpeak) speakText(responseText);
     }, 1000);
   };
 
@@ -171,31 +226,20 @@ const Chatbot = () => {
     <div
       style={{ position: "fixed", bottom: "24px", right: "24px", zIndex: 9999 }}
     >
-      {/* Chat Button */}
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
           style={{
-            backgroundColor: "#2563eb",
+            backgroundColor: "rgb(52, 52, 52)",
             color: "white",
             padding: "16px",
             borderRadius: "50%",
             border: "none",
             cursor: "pointer",
-            boxShadow:
-              "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
-            transition: "all 0.3s ease",
+            boxShadow: "0 10px 15px -3px rgba(0,0,0,0.1)",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = "#1d4ed8";
-            e.currentTarget.style.transform = "scale(1.1)";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = "#2563eb";
-            e.currentTarget.style.transform = "scale(1)";
           }}
           aria-label="Open chat"
         >
@@ -203,14 +247,13 @@ const Chatbot = () => {
         </button>
       )}
 
-      {/* Chat Window */}
       {isOpen && (
         <div
           style={{
             width: "384px",
             backgroundColor: "white",
             borderRadius: "8px",
-            boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+            boxShadow: "0 25px 50px -12px rgba(0,0,0,0.25)",
             display: "flex",
             flexDirection: "column",
             height: isMinimized ? "64px" : "600px",
@@ -218,10 +261,10 @@ const Chatbot = () => {
             overflow: "hidden",
           }}
         >
-          {/* Header */}
           <div
             style={{
-              background: "linear-gradient(to right, #2563eb, #1d4ed8)",
+              // background: "linear-gradient(to right, #2563eb, #1d4ed8)",
+              background: "rgb(52, 52, 52)",
               color: "white",
               padding: "16px",
               borderTopLeftRadius: "8px",
@@ -241,7 +284,7 @@ const Chatbot = () => {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  color: "#2563eb",
+                  color: "rgb(52, 52, 52)",
                   fontWeight: "bold",
                 }}
               >
@@ -252,11 +295,32 @@ const Chatbot = () => {
                   Dr. Baidya's Assistant
                 </h3>
                 <p style={{ fontSize: "12px", opacity: 0.9, margin: 0 }}>
-                  Online
+                  {isListening
+                    ? "🎤 Listening..."
+                    : isSpeaking
+                    ? "🔊 Speaking..."
+                    : "Online"}
                 </p>
               </div>
             </div>
             <div style={{ display: "flex", gap: "8px" }}>
+              <button
+                onClick={() => setAutoSpeak(!autoSpeak)}
+                style={{
+                  background: autoSpeak
+                    ? "rgba(255,255,255,0.2)"
+                    : "transparent",
+                  border: "none",
+                  color: "white",
+                  cursor: "pointer",
+                  padding: "4px",
+                  borderRadius: "4px",
+                  display: "flex",
+                }}
+                title={autoSpeak ? "Auto-speak ON" : "Auto-speak OFF"}
+              >
+                {autoSpeak ? <Volume2 size={18} /> : <VolumeX size={18} />}
+              </button>
               <button
                 onClick={() => setIsMinimized(!isMinimized)}
                 style={{
@@ -267,21 +331,15 @@ const Chatbot = () => {
                   padding: "4px",
                   borderRadius: "4px",
                   display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
                 }}
-                onMouseEnter={(e) =>
-                  (e.currentTarget.style.backgroundColor = "rgba(0,0,0,0.2)")
-                }
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.backgroundColor = "transparent")
-                }
-                aria-label="Minimize chat"
               >
                 <Minimize2 size={20} />
               </button>
               <button
-                onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  setIsOpen(false);
+                  stopSpeaking();
+                }}
                 style={{
                   background: "transparent",
                   border: "none",
@@ -290,16 +348,7 @@ const Chatbot = () => {
                   padding: "4px",
                   borderRadius: "4px",
                   display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
                 }}
-                onMouseEnter={(e) =>
-                  (e.currentTarget.style.backgroundColor = "rgba(0,0,0,0.2)")
-                }
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.backgroundColor = "transparent")
-                }
-                aria-label="Close chat"
               >
                 <X size={20} />
               </button>
@@ -308,7 +357,6 @@ const Chatbot = () => {
 
           {!isMinimized && (
             <>
-              {/* Messages Area */}
               <div
                 style={{
                   flex: 1,
@@ -333,16 +381,14 @@ const Chatbot = () => {
                         padding: "12px",
                         borderRadius: "8px",
                         backgroundColor:
-                          message.sender === "user" ? "#2563eb" : "white",
+                          message.sender === "user"
+                            ? "rgb(52, 52, 52)"
+                            : "white",
                         color: message.sender === "user" ? "white" : "#1f2937",
                         boxShadow:
                           message.sender === "bot"
                             ? "0 1px 2px rgba(0,0,0,0.05)"
                             : "none",
-                        borderBottomRightRadius:
-                          message.sender === "user" ? 0 : "8px",
-                        borderBottomLeftRadius:
-                          message.sender === "bot" ? 0 : "8px",
                         whiteSpace: "pre-line",
                       }}
                     >
@@ -355,25 +401,56 @@ const Chatbot = () => {
                       >
                         {message.text}
                       </p>
-                      <p
+                      <div
                         style={{
-                          fontSize: "12px",
-                          margin: 0,
-                          color:
-                            message.sender === "user"
-                              ? "rgba(255,255,255,0.7)"
-                              : "#6b7280",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "space-between",
+                          gap: "8px",
                         }}
                       >
-                        {message.timestamp.toLocaleTimeString([], {
-                          hour: "2-digit",
-                          minute: "2-digit",
-                        })}
-                      </p>
+                        <p
+                          style={{
+                            fontSize: "12px",
+                            margin: 0,
+                            color:
+                              message.sender === "user"
+                                ? "rgba(255,255,255,0.7)"
+                                : "#6b7280",
+                          }}
+                        >
+                          {message.timestamp.toLocaleTimeString([], {
+                            hour: "2-digit",
+                            minute: "2-digit",
+                          })}
+                        </p>
+                        {message.sender === "bot" && (
+                          <button
+                            onClick={() =>
+                              isSpeaking
+                                ? stopSpeaking()
+                                : speakText(message.text)
+                            }
+                            style={{
+                              background: "none",
+                              border: "none",
+                              cursor: "pointer",
+                              padding: "2px",
+                              color: "#6b7280",
+                            }}
+                            title="Read aloud"
+                          >
+                            {isSpeaking ? (
+                              <VolumeX size={14} />
+                            ) : (
+                              <Volume2 size={14} />
+                            )}
+                          </button>
+                        )}
+                      </div>
                     </div>
                   </div>
                 ))}
-
                 {isTyping && (
                   <div
                     style={{
@@ -391,42 +468,25 @@ const Chatbot = () => {
                       }}
                     >
                       <div style={{ display: "flex", gap: "4px" }}>
-                        <div
-                          style={{
-                            width: "8px",
-                            height: "8px",
-                            backgroundColor: "#9ca3af",
-                            borderRadius: "50%",
-                            animation: "bounce 1s infinite",
-                          }}
-                        ></div>
-                        <div
-                          style={{
-                            width: "8px",
-                            height: "8px",
-                            backgroundColor: "#9ca3af",
-                            borderRadius: "50%",
-                            animation: "bounce 1s infinite 0.2s",
-                          }}
-                        ></div>
-                        <div
-                          style={{
-                            width: "8px",
-                            height: "8px",
-                            backgroundColor: "#9ca3af",
-                            borderRadius: "50%",
-                            animation: "bounce 1s infinite 0.4s",
-                          }}
-                        ></div>
+                        {[0, 0.2, 0.4].map((delay, i) => (
+                          <div
+                            key={i}
+                            style={{
+                              width: "8px",
+                              height: "8px",
+                              backgroundColor: "#9ca3af",
+                              borderRadius: "50%",
+                              animation: `bounce 1s infinite ${delay}s`,
+                            }}
+                          />
+                        ))}
                       </div>
                     </div>
                   </div>
                 )}
-
                 <div ref={messagesEndRef} />
               </div>
 
-              {/* Quick Questions */}
               {messages.length === 1 && (
                 <div
                   style={{
@@ -447,12 +507,12 @@ const Chatbot = () => {
                   <div
                     style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}
                   >
-                    {quickQuestions.map((question, index) => (
+                    {quickQuestions.map((q, i) => (
                       <button
-                        key={index}
+                        key={i}
                         onClick={() => {
-                          setInputMessage(question);
-                          setTimeout(() => handleSendMessage(), 100);
+                          setInputMessage(q);
+                          setTimeout(handleSendMessage, 100);
                         }}
                         style={{
                           fontSize: "12px",
@@ -461,39 +521,49 @@ const Chatbot = () => {
                           padding: "4px 12px",
                           borderRadius: "16px",
                           cursor: "pointer",
-                          transition: "background-color 0.2s",
                         }}
-                        onMouseEnter={(e) =>
-                          (e.currentTarget.style.backgroundColor = "#f3f4f6")
-                        }
-                        onMouseLeave={(e) =>
-                          (e.currentTarget.style.backgroundColor = "white")
-                        }
                       >
-                        {question}
+                        {q}
                       </button>
                     ))}
                   </div>
                 </div>
               )}
 
-              {/* Input Area */}
               <div
                 style={{
                   padding: "16px",
                   borderTop: "1px solid #e5e7eb",
                   backgroundColor: "white",
-                  borderBottomLeftRadius: "8px",
-                  borderBottomRightRadius: "8px",
                 }}
               >
                 <div style={{ display: "flex", gap: "8px" }}>
+                  <button
+                    onClick={toggleListening}
+                    style={{
+                      backgroundColor: isListening ? "#dc2626" : "#f3f4f6",
+                      color: isListening ? "white" : "#374151",
+                      padding: "8px",
+                      borderRadius: "8px",
+                      border: "none",
+                      cursor: "pointer",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      animation: isListening ? "pulse 1.5s infinite" : "none",
+                    }}
+                    title={isListening ? "Stop listening" : "Start voice input"}
+                  >
+                    {isListening ? <MicOff size={20} /> : <Mic size={20} />}
+                  </button>
                   <input
                     type="text"
                     value={inputMessage}
                     onChange={(e) => setInputMessage(e.target.value)}
                     onKeyPress={handleKeyPress}
-                    placeholder="Type your message..."
+                    placeholder={
+                      isListening ? "Listening..." : "Type or speak..."
+                    }
                     style={{
                       flex: 1,
                       border: "1px solid #d1d5db",
@@ -502,42 +572,39 @@ const Chatbot = () => {
                       fontSize: "14px",
                       outline: "none",
                     }}
-                    onFocus={(e) =>
-                      (e.currentTarget.style.boxShadow =
-                        "0 0 0 2px rgba(37, 99, 235, 0.2)")
-                    }
-                    onBlur={(e) => (e.currentTarget.style.boxShadow = "none")}
                   />
                   <button
                     onClick={handleSendMessage}
                     disabled={inputMessage.trim() === ""}
                     style={{
                       backgroundColor:
-                        inputMessage.trim() === "" ? "#d1d5db" : "#2563eb",
+                        inputMessage.trim() === ""
+                          ? "#d1d5db"
+                          : "rgb(52, 52, 52)",
                       color: "white",
                       padding: "8px",
                       borderRadius: "8px",
                       border: "none",
                       cursor:
                         inputMessage.trim() === "" ? "not-allowed" : "pointer",
-                      transition: "background-color 0.2s",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
                     }}
-                    onMouseEnter={(e) => {
-                      if (inputMessage.trim() !== "")
-                        e.currentTarget.style.backgroundColor = "#1d4ed8";
-                    }}
-                    onMouseLeave={(e) => {
-                      if (inputMessage.trim() !== "")
-                        e.currentTarget.style.backgroundColor = "#2563eb";
-                    }}
-                    aria-label="Send message"
                   >
                     <Send size={20} />
                   </button>
                 </div>
+                <p
+                  style={{
+                    fontSize: "11px",
+                    color: "#9ca3af",
+                    marginTop: "8px",
+                    textAlign: "center",
+                  }}
+                >
+                  🎤 Click mic to speak • 🔊 Responses read aloud
+                </p>
               </div>
             </>
           )}
@@ -545,14 +612,8 @@ const Chatbot = () => {
       )}
 
       <style>{`
-        @keyframes bounce {
-          0%, 100% {
-            transform: translateY(0);
-          }
-          50% {
-            transform: translateY(-4px);
-          }
-        }
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
       `}</style>
     </div>
   );
