@@ -43,6 +43,59 @@ function Home() {
     return () => clearInterval(interval); // Cleanup on unmount
   }, []);
 
+  // Add this useEffect in your Home component, after your existing useEffect for image switching
+
+  const aboutMe = () => {
+    const bioText = `I'm an associate professor in Information Technology at Concordia University of Edmonton, Alberta, Canada. 
+    Prior to that, I worked as an Investigador Asociado, equivalent to assistant professor, at CIMAT, Monterrey, Mexico.
+    I received my Ph.D. from the University of Alberta, Canada. 
+    I conducted postdoctoral research at the University of Calgary, Canada, and Wake Forest School of Medicine, USA. 
+    My research interests include Artificial Intelligence, Machine Learning, Computer Vision, and Natural Language Processing. 
+    At present, I hold an NSERC discovery grant in Canada.`;
+
+    const synth = window.speechSynthesis;
+
+    // Small delay to ensure page is fully loaded
+    const timer = setTimeout(() => {
+      const utterance = new SpeechSynthesisUtterance(bioText);
+      utterance.rate = 1;
+      utterance.pitch = 1;
+      synth.speak(utterance);
+    }, 1000);
+
+    // Cleanup: cancel speech if user navigates away
+    return () => {
+      clearTimeout(timer);
+      synth.cancel();
+    };
+  };
+
+  useEffect(() => {
+    console.log("Home component mounted");
+    const bioText = `I'm an associate professor in Information Technology at Concordia University of Edmonton, Alberta, Canada. 
+    Prior to that, I worked as an Investigador Asociado, equivalent to assistant professor, at CIMAT, Monterrey, Mexico. 
+    I received my Ph.D. from the University of Alberta, Canada. 
+    I conducted postdoctoral research at the University of Calgary, Canada, and Wake Forest School of Medicine, USA. 
+    My research interests include Artificial Intelligence, Machine Learning, Computer Vision, and Natural Language Processing. 
+    At present, I hold an NSERC discovery grant in Canada.`;
+
+    const synth = window.speechSynthesis;
+
+    // Small delay to ensure page is fully loaded
+    const timer = setTimeout(() => {
+      const utterance = new SpeechSynthesisUtterance(bioText);
+      utterance.rate = 1;
+      utterance.pitch = 1;
+      synth.speak(utterance);
+    }, 1000);
+
+    // Cleanup: cancel speech if user navigates away
+    return () => {
+      clearTimeout(timer);
+      synth.cancel();
+    };
+  }, []);
+
   return (
     <>
       <WhiteNavBar />
@@ -456,7 +509,13 @@ function Home() {
         </Row>
       </Container> */}
 
-      <Container className="w-100 my-5 py-5">
+      <Container fluid className="px-0 py-3">
+        <Button variant="dark" className="mx-auto d-block" onClick={aboutMe}>
+          Click here to hear my story
+        </Button>
+      </Container>
+
+      <Container className="w-100 py-5">
         <Row className="g-4 mx-auto" style={{ maxWidth: "1400px" }}>
           <Col xs={12} md={5}>
             <Card className="home_headercard border-0 h-100 shadow-lg">
