@@ -1,11 +1,12 @@
 {
   "files": {
     "main.css": "/static/css/main.b384e7ee.css",
-    "main.js": "/static/js/main.ae8f8ce8.js",
+    "main.js": "/static/js/main.ddea4802.js",
     "static/media/v2.mp4": "/static/media/v2.87d7f1b49ab5b882ef96.mp4",
     "static/media/v1.MOV": "/static/media/v1.8a7194b3c18f9748e6dd.MOV",
     "static/media/BaidyaCV_Canada.pdf": "/static/media/BaidyaCV_Canada.20f621e4d3298be55d5a.pdf",
     "static/media/Indianstatisticalinstitutelogo.png": "/static/media/Indianstatisticalinstitutelogo.01b2e4483563fd109c5b.png",
+    "static/media/Baidya-1.jpeg": "/static/media/Baidya-1.f42440ca71565a818aac.jpeg",
     "static/media/bootstrap-icons.woff?": "/static/media/bootstrap-icons.1295669cd4e305c97f2c.woff",
     "static/media/Conacyt-logo.png": "/static/media/Conacyt-logo.0dc5b9a251a294e3b982.png",
     "static/media/white_img.webp": "/static/media/white_img.869c13169df01af196ac.webp",
@@ -16,15 +17,15 @@
     "static/media/NSERC.png": "/static/media/NSERC.7c6c2f65cecfbb84017e.png",
     "static/media/UofA.png": "/static/media/UofA.f174b334d630f07a263a.png",
     "static/media/Jadavpur_University_Logo.png": "/static/media/Jadavpur_University_Logo.e8cbfc6422e3c05d43f6.png",
-    "static/media/linked_profile pic.jpg": "/static/media/linked_profile pic.18791cda65014ca3bfca.jpg",
+    "static/media/Baidya.jpg": "/static/media/Baidya.18791cda65014ca3bfca.jpg",
     "static/media/Mitacs_logo.png": "/static/media/Mitacs_logo.4f71f2ff0f78bb50e3a7.png",
     "static/media/NVIDIA_logo.png": "/static/media/NVIDIA_logo.54bde6dcf45b5f8f07af.png",
     "index.html": "/index.html",
     "main.b384e7ee.css.map": "/static/css/main.b384e7ee.css.map",
-    "main.ae8f8ce8.js.map": "/static/js/main.ae8f8ce8.js.map"
+    "main.ddea4802.js.map": "/static/js/main.ddea4802.js.map"
   },
   "entrypoints": [
     "static/css/main.b384e7ee.css",
-    "static/js/main.ae8f8ce8.js"
+    "static/js/main.ddea4802.js"
   ]
 }
