@@ -22,9 +22,17 @@ import Col from "react-bootstrap/Col";
 import cv from "./image/BaidyaCV_Canada.pdf";
 import header_img2 from "./image/Baidya-1.jpeg";
 import anotherCV from "./image/CCV-Baidya_NathSaha (2).pdf";
+import idgvf from "./image/slides/IDGVF.png";
+import wso from "./image/slides/WeldingSequenceOptimization.png";
+import snakeAutomationGif from "./image/slides/snakeAutomation.gif";
+import diversityStatementExpanded from "./image/documents/Diversity_Statement.pdf";
+import diversityStatementShort from "./image/documents/Equity_Diversity_Inclusion.pdf";
+import teachingStatement from "./image/documents/Teaching_Statement.pdf";
+import researchStatementRobotics from "./image/documents/Research_Statement_Robotics.pdf";
+import researchStatementML from "./image/documents/Research_Statement_ML.pdf";
+import researchStatementIP from "./image/documents/Research_Statement_IP.pdf";
+import researchStatemtentMI from "./image/documents/Research_Statement_MI.pdf";
 import "bootstrap-icons/font/bootstrap-icons.css";
-
-import { NavLink } from "react-router-dom";
 import WhiteNavBar from "./WhiteNavBar";
 import Chatbot from "./Chatbot";
 
@@ -230,28 +238,49 @@ function Home() {
                 icon: "lightbulb",
                 path: "/path-to-research.pdf",
                 subItems: [
-                  { name: "Industry 4.0", icon: "lightbulb", path: cv },
                   {
-                    name: "Natural Language Processing",
+                    name: "Industry 4.0",
                     icon: "lightbulb",
-                    path: anotherCV,
+                    path: researchStatementRobotics,
+                  },
+                  {
+                    name: "Machine Learning",
+                    icon: "lightbulb",
+                    path: researchStatementML,
                   },
                   {
                     name: "Computer Vision & Image Processing",
                     icon: "lightbulb",
-                    path: "/path-to-R3.pdf",
+                    path: researchStatementIP,
+                  },
+                  {
+                    name: "Medical Image Analysis",
+                    icon: "lightbulb",
+                    path: researchStatemtentMI,
                   },
                 ],
               },
               {
                 title: "Teaching Statement",
                 icon: "book",
-                path: "/path-to-teaching.pdf",
+                path: teachingStatement,
               },
               {
                 title: "Diversity Statement",
                 icon: "people",
                 path: "/path-to-diversity.pdf",
+                subItems: [
+                  {
+                    name: "Diversity Statement Expanded",
+                    icon: "people",
+                    path: diversityStatementExpanded,
+                  },
+                  {
+                    name: "Diversity Statement Short",
+                    icon: "people",
+                    path: diversityStatementShort,
+                  },
+                ],
               },
             ].map((doc, idx) => (
               <Col xs={6} sm={4} md={2} key={idx} className="position-relative">
@@ -883,9 +912,9 @@ function Home() {
 
       <Container fluid className=" mt-5 bg-dark">
         <Container>
-          <p class=" research_title text-center mt-5 mb-5 pt-5 text-white">
+          {/* <p class=" research_title text-center mt-5 mb-5 pt-5 text-white">
             RESEARCH HIGHLIGHTS
-          </p>
+          </p> */}
           <Carousel>
             {/*-------------------------------slide one--------------------------------*/}
             <Carousel.Item interval={1000}>
@@ -1202,26 +1231,28 @@ function Home() {
           <Container fluid className="mt-5 bg-dark">
             <Container>
               <Carousel>
-                {/* --------------------------- Slide 1 --------------------------- */}
-                <Carousel.Item interval={1000}>
+                {/* --------------------------- Slide 1: Computer Vision --------------------------- */}
+                <Carousel.Item interval={10000}>
                   <Row className="justify-content-center g-4 pb-5">
                     {[
                       {
-                        title: "Deep Learning with Light",
-                        text: "A new method uses optics to accelerate machine-learning computations on smart speakers and other low-power connected devices.",
-                        link: "https://news.mit.edu/2022/optics-deep-learning-computations-1020",
+                        title: "Passenger Counting & Vehicle Detection",
+                        text: "Automated people detection and tracking using optical flow (Horn-Schunck method), Hough Circle transforms, and spatio-temporal background subtraction. Published at ICIP 2011.",
+                        // image: passengerCountingImg,
+                        image: image, // Replace with actual image
                       },
                       {
-                        title: "Learning on the Edge",
-                        text: "AI models continually learn from new data on edge devices, reducing energy cost and privacy risk.",
-                        link: "https://news.mit.edu/2022/machine-learning-edge-microcontroller-1004",
+                        title: "Thermal Image Analysis for Disease Detection",
+                        text: "Non-invasive veterinary disease detection from Alberta Veterinary Surveillance Network using hierarchical variational thresholding for detecting Bovine Viral Diarrhoea and Laryngotracheitis.",
+                        // image: thermalImg,
+                        image: snakeAutomationGif, // Replace with actual image
                       },
                     ].map((item, idx) => (
                       <Col xs={12} md={6} key={idx}>
                         <Card className="w-84 mx-auto border-0 text-center bg-light shadow-sm h-100">
                           <img
                             className="d-block w-75 mx-auto mt-4"
-                            src={image}
+                            src={item.image}
                             alt={item.title}
                           />
                           <Card.Body>
@@ -1232,14 +1263,9 @@ function Home() {
                               {item.text}
                             </Card.Text>
                             <Card.Text className="text-info">
-                              <a
-                                href={item.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-decoration-none"
-                              >
-                                click here to know more
-                              </a>
+                              <span className="badge bg-primary">
+                                Computer Vision (2006-2011)
+                              </span>
                             </Card.Text>
                           </Card.Body>
                         </Card>
@@ -1248,26 +1274,28 @@ function Home() {
                   </Row>
                 </Carousel.Item>
 
-                {/* --------------------------- Slide 2 --------------------------- */}
+                {/* --------------------------- Slide 2: Oil Sand Analysis --------------------------- */}
                 <Carousel.Item interval={1000}>
                   <Row className="justify-content-center g-4 pb-5">
                     {[
                       {
-                        title: "Neurodegenerative Disease Patterns",
-                        text: "A machine-learning method finds patterns of health decline in ALS, informing future clinical trial designs and mechanism discovery.",
-                        link: "https://news.mit.edu/2022/neurodegenerative-disease-can-progress-newly-identified-patterns-0927",
+                        title: "Active Contour (Snake) Algorithms - IDGVF",
+                        text: "Developed Interleave Directional Gradient Vector Flow for automated oil sand particle delineation with improved capture range. Based on seminal Kass et al. work (22,500+ citations).",
+                        // image: snakeAlgorithmImg,
+                        image: image,
                       },
                       {
-                        title: "Translational AI Research",
-                        text: "The MIT-Pillar AI Collective will cultivate prospective entrepreneurs and drive innovation.",
-                        link: "https://news.mit.edu/2022/new-program-support-translational-research-ai-data-science-machine-learning-0927",
+                        title: "Bayesian Quad Tree (BQT) Segmentation",
+                        text: "Statistical object modeling using PCA-based texture analysis with iterative splitting criteria for particle size distribution in IN-BIT bitumen extraction. Published at ACCV 2010.",
+                        // image: oilSandImg,
+                        image: image,
                       },
                     ].map((item, idx) => (
                       <Col xs={12} md={6} key={idx}>
                         <Card className="w-84 mx-auto border-0 text-center bg-light shadow-sm h-100">
                           <img
                             className="d-block w-75 mx-auto mt-4"
-                            src={image}
+                            src={item.image}
                             alt={item.title}
                           />
                           <Card.Body>
@@ -1278,14 +1306,9 @@ function Home() {
                               {item.text}
                             </Card.Text>
                             <Card.Text className="text-info">
-                              <a
-                                href={item.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-decoration-none"
-                              >
-                                click here to know more
-                              </a>
+                              <span className="badge bg-success">
+                                Oil Sand Particle Analysis
+                              </span>
                             </Card.Text>
                           </Card.Body>
                         </Card>
@@ -1294,26 +1317,327 @@ function Home() {
                   </Row>
                 </Carousel.Item>
 
-                {/* --------------------------- Slide 3 --------------------------- */}
+                {/* --------------------------- Slide 2b: IDGVF Equations --------------------------- */}
+                <Carousel.Item interval={1000}>
+                  <Row className="justify-content-center g-4 pb-5">
+                    {/* Left Column - Equations */}
+                    <Col xs={12} md={6}>
+                      <Card className="mx-auto border-0 bg-light shadow-sm h-100">
+                        <Card.Body className="p-3">
+                          <Card.Title className="text-dark mb-3 text-center">
+                            <strong>IDGVF Algorithm</strong>
+                          </Card.Title>
+
+                          {/* Algorithm Container */}
+                          <div
+                            style={{
+                              border: "3px solid #2196F3",
+                              borderRadius: "10px",
+                              padding: "15px",
+                              backgroundColor: "#fff",
+                              textAlign: "left",
+                              fontSize: "0.85rem",
+                            }}
+                          >
+                            {/* For loop header */}
+                            <p
+                              style={{
+                                color: "#d32f2f",
+                                fontStyle: "italic",
+                                marginBottom: "10px",
+                              }}
+                            >
+                              <strong>for</strong> i = 1 to n
+                            </p>
+
+                            {/* Rho equation */}
+                            <div
+                              style={{
+                                marginBottom: "10px",
+                                paddingLeft: "15px",
+                              }}
+                            >
+                              <p style={{ color: "#00695c", margin: 0 }}>
+                                ρ(x, y) = max(0,
+                                <span
+                                  style={{
+                                    display: "inline-block",
+                                    verticalAlign: "middle",
+                                    textAlign: "center",
+                                  }}
+                                >
+                                  <span
+                                    style={{
+                                      borderBottom: "1px solid #000",
+                                      display: "block",
+                                      padding: "1px 3px",
+                                      fontSize: "0.8rem",
+                                    }}
+                                  >
+                                    (x − x<sub>0</sub>
+                                    <sup>i</sup>)(∂I/∂x) + (y − y<sub>0</sub>
+                                    <sup>i</sup>)(∂I/∂y)
+                                  </span>
+                                  <span
+                                    style={{
+                                      display: "block",
+                                      padding: "1px 3px",
+                                      fontSize: "0.8rem",
+                                    }}
+                                  >
+                                    √[(x − x<sub>0</sub>
+                                    <sup>i</sup>)<sup>2</sup> + (y − y
+                                    <sub>0</sub>
+                                    <sup>i</sup>)<sup>2</sup>]
+                                  </span>
+                                </span>
+                                )
+                              </p>
+                            </div>
+
+                            {/* Compute force field */}
+                            <p
+                              style={{
+                                color: "#00695c",
+                                fontWeight: "bold",
+                                marginBottom: "8px",
+                                paddingLeft: "15px",
+                              }}
+                            >
+                              Compute force field (u(x, y), v(x, y)) by
+                            </p>
+
+                            {/* Diffusion equations */}
+                            <div
+                              style={{
+                                paddingLeft: "15px",
+                                marginBottom: "8px",
+                                fontSize: "0.8rem",
+                              }}
+                            >
+                              <p style={{ marginBottom: "5px" }}>
+                                ∂u/∂t = exp(−ρ/K)∇<sup>2</sup>u −
+                                (1−exp(−ρ/K))(u − ∂ρ/∂x)
+                              </p>
+                              <p style={{ marginBottom: "10px" }}>
+                                ∂v/∂t = exp(−ρ/K)∇<sup>2</sup>v −
+                                (1−exp(−ρ/K))(v − ∂ρ/∂y)
+                              </p>
+                            </div>
+
+                            {/* Boundary condition - green box */}
+                            <div
+                              style={{
+                                display: "flex",
+                                alignItems: "center",
+                                marginBottom: "10px",
+                              }}
+                            >
+                              <div
+                                style={{
+                                  border: "2px solid #4CAF50",
+                                  borderRadius: "6px",
+                                  padding: "6px 10px",
+                                  marginLeft: "15px",
+                                  fontSize: "0.8rem",
+                                }}
+                              >
+                                <p style={{ color: "#00695c", margin: 0 }}>
+                                  <strong>(u, v) = n(x, y),</strong> for (x, y)
+                                  ∈ ∂Ω
+                                </p>
+                              </div>
+                              <div
+                                style={{
+                                  color: "#1565C0",
+                                  fontWeight: "bold",
+                                  fontSize: "0.7rem",
+                                  marginLeft: "10px",
+                                  lineHeight: "1.2",
+                                }}
+                              >
+                                Dirichlet
+                                <br />
+                                Boundary
+                              </div>
+                            </div>
+
+                            {/* Snake evolution equations */}
+                            <div
+                              style={{
+                                paddingLeft: "15px",
+                                fontSize: "0.8rem",
+                              }}
+                            >
+                              <p style={{ marginBottom: "5px" }}>
+                                X<sup>i+1</sup> = X<sup>i</sup> + Δt(α
+                                <span
+                                  style={{
+                                    display: "inline-block",
+                                    verticalAlign: "middle",
+                                    textAlign: "center",
+                                  }}
+                                >
+                                  <span
+                                    style={{
+                                      borderBottom: "1px solid #000",
+                                      display: "block",
+                                    }}
+                                  >
+                                    d<sup>2</sup>X
+                                  </span>
+                                  <span>
+                                    ds<sup>2</sup>
+                                  </span>
+                                </span>
+                                − β
+                                <span
+                                  style={{
+                                    display: "inline-block",
+                                    verticalAlign: "middle",
+                                    textAlign: "center",
+                                  }}
+                                >
+                                  <span
+                                    style={{
+                                      borderBottom: "1px solid #000",
+                                      display: "block",
+                                    }}
+                                  >
+                                    d<sup>4</sup>X
+                                  </span>
+                                  <span>
+                                    ds<sup>4</sup>
+                                  </span>
+                                </span>
+                                + u)
+                              </p>
+                              <p style={{ marginBottom: "5px" }}>
+                                Y<sup>i+1</sup> = Y<sup>i</sup> + Δt(α
+                                <span
+                                  style={{
+                                    display: "inline-block",
+                                    verticalAlign: "middle",
+                                    textAlign: "center",
+                                  }}
+                                >
+                                  <span
+                                    style={{
+                                      borderBottom: "1px solid #000",
+                                      display: "block",
+                                    }}
+                                  >
+                                    d<sup>2</sup>Y
+                                  </span>
+                                  <span>
+                                    ds<sup>2</sup>
+                                  </span>
+                                </span>
+                                − β
+                                <span
+                                  style={{
+                                    display: "inline-block",
+                                    verticalAlign: "middle",
+                                    textAlign: "center",
+                                  }}
+                                >
+                                  <span
+                                    style={{
+                                      borderBottom: "1px solid #000",
+                                      display: "block",
+                                    }}
+                                  >
+                                    d<sup>4</sup>Y
+                                  </span>
+                                  <span>
+                                    ds<sup>4</sup>
+                                  </span>
+                                </span>
+                                + v)
+                              </p>
+                            </div>
+
+                            {/* End */}
+                            <p
+                              style={{
+                                color: "#d32f2f",
+                                fontStyle: "italic",
+                                marginTop: "10px",
+                                marginBottom: 0,
+                              }}
+                            >
+                              <strong>end</strong>
+                            </p>
+                          </div>
+
+                          <Card.Text className="text-info mt-2 text-center">
+                            <span className="badge bg-success">
+                              IDGVF Algorithm
+                            </span>
+                          </Card.Text>
+                        </Card.Body>
+                      </Card>
+                    </Col>
+
+                    {/* Right Column - Image */}
+                    <Col xs={12} md={6}>
+                      <Card className="mx-auto border-0 text-center bg-light shadow-sm h-100">
+                        <Card.Body className="p-3 d-flex flex-column justify-content-center">
+                          <Card.Title className="text-dark mb-3">
+                            <strong>Oil Sand Particle Segmentation</strong>
+                          </Card.Title>
+                          <img
+                            className="d-block mx-auto"
+                            src={idgvf}
+                            alt="IDGVF Algorithm Diagram"
+                            style={{
+                              maxWidth: "100%",
+                              maxHeight: "350px",
+                              objectFit: "contain",
+                              borderRadius: "8px",
+                            }}
+                          />
+                          <Card.Text
+                            className="text-dark mt-3"
+                            style={{ fontSize: "0.9rem" }}
+                          >
+                            Comparison of GVF vs IDGVF showing improved capture
+                            range and contour evolution for particle
+                            delineation.
+                          </Card.Text>
+                          <Card.Text className="text-info mt-2">
+                            <span className="badge bg-success">
+                              Oil Sand Particle Analysis
+                            </span>
+                          </Card.Text>
+                        </Card.Body>
+                      </Card>
+                    </Col>
+                  </Row>
+                </Carousel.Item>
+
+                {/* --------------------------- Slide 3: Robotics & Automation --------------------------- */}
                 <Carousel.Item interval={1000}>
                   <Row className="justify-content-center g-4 pb-5">
                     {[
                       {
-                        title: "In-home Wireless Tracking for Parkinson’s",
-                        text: "By continuously monitoring a patient’s gait speed, the system can assess condition severity between doctor visits.",
-                        link: "https://news.mit.edu/2022/home-wireless-parkinsons-progression-0921",
+                        title: "Automated Peg-Hole Insertion",
+                        text: "AI-controlled Motoman SDA20 robot using ML classifiers (Naive Bayes, Neural Networks, SVM, Decision Trees) with F/T sensor feedback. Published in LNAI 2016 & SSRG-IJCSE 2016.",
+                        // image: pegHoleImg,
+                        image: image,
                       },
                       {
-                        title: "Computing for the Health of the Planet",
-                        text: "The MIT Schwarzman College of Computing welcomes new faculty addressing climate risks and environmental challenges.",
-                        link: "https://news.mit.edu/2022/computing-health-planet-new-faculty-0913",
+                        title: "Welding Sequence Optimization",
+                        text: "Integrating FEM with AI techniques (Genetic Algorithm, Reinforcement Learning, Graph Search) to minimize deformation. Reduced simulations from 115 to 38 for 8 weld beads.",
+                        // image: weldingImg,
+                        image: wso,
                       },
                     ].map((item, idx) => (
                       <Col xs={12} md={6} key={idx}>
                         <Card className="w-84 mx-auto border-0 text-center bg-light shadow-sm h-100">
                           <img
                             className="d-block w-75 mx-auto mt-4"
-                            src={image}
+                            src={item.image}
                             alt={item.title}
                           />
                           <Card.Body>
@@ -1324,14 +1648,179 @@ function Home() {
                               {item.text}
                             </Card.Text>
                             <Card.Text className="text-info">
-                              <a
-                                href={item.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-decoration-none"
-                              >
-                                click here to know more
-                              </a>
+                              <span className="badge bg-warning text-dark">
+                                Robotics & Manufacturing (2014-2019)
+                              </span>
+                            </Card.Text>
+                          </Card.Body>
+                        </Card>
+                      </Col>
+                    ))}
+                  </Row>
+                </Carousel.Item>
+
+                {/* --------------------------- Slide 4: Online Inspection --------------------------- */}
+                <Carousel.Item interval={1000}>
+                  <Row className="justify-content-center g-4 pb-5">
+                    {[
+                      {
+                        title: "Online Welding Inspection via Kalman Filter",
+                        text: "Real-time tracking of molten metal droplets using Kalman filtering to detect welding defects: overlap, spatter, undercut, and porosity during arc welding process.",
+                        // image: kalmanImg,
+                        image: image,
+                      },
+                      {
+                        title: "Wire Arc Additive Manufacturing Optimization",
+                        text: "Parameter optimization using non-linear regression and Taguchi L25 experimental design (6 factors, 5 levels) for controlling weld bead height, width, and sinusoidal profile.",
+                        // image: weldingImg,
+                        image: image,
+                      },
+                    ].map((item, idx) => (
+                      <Col xs={12} md={6} key={idx}>
+                        <Card className="w-84 mx-auto border-0 text-center bg-light shadow-sm h-100">
+                          <img
+                            className="d-block w-75 mx-auto mt-4"
+                            src={item.image}
+                            alt={item.title}
+                          />
+                          <Card.Body>
+                            <Card.Title className="text-dark">
+                              {item.title}
+                            </Card.Title>
+                            <Card.Text className="text-dark">
+                              {item.text}
+                            </Card.Text>
+                            <Card.Text className="text-info">
+                              <span className="badge bg-danger">
+                                Quality Control & Inspection
+                              </span>
+                            </Card.Text>
+                          </Card.Body>
+                        </Card>
+                      </Col>
+                    ))}
+                  </Row>
+                </Carousel.Item>
+
+                {/* --------------------------- Slide 5: Industrial AI Applications --------------------------- */}
+                <Carousel.Item interval={1000}>
+                  <Row className="justify-content-center g-4 pb-5">
+                    {[
+                      {
+                        title: "Chattering Detection in Drilling",
+                        text: "Vibration analysis using SVM-based nonparametric control charts for real-time detection of machining anomalies and statistical process quality monitoring.",
+                        // image: chatteringImg,
+                        image: image,
+                      },
+                      {
+                        title: "Paint Defect Detection in Automotive",
+                        text: "Laser and camera-based system for detecting paint defects in automotive rear-view mirrors, focusing on critical visibility areas (upper front, lower front, internal side).",
+                        // image: image,
+                        image: image,
+                      },
+                    ].map((item, idx) => (
+                      <Col xs={12} md={6} key={idx}>
+                        <Card className="w-84 mx-auto border-0 text-center bg-light shadow-sm h-100">
+                          <img
+                            className="d-block w-75 mx-auto mt-4"
+                            src={item.image}
+                            alt={item.title}
+                          />
+                          <Card.Body>
+                            <Card.Title className="text-dark">
+                              {item.title}
+                            </Card.Title>
+                            <Card.Text className="text-dark">
+                              {item.text}
+                            </Card.Text>
+                            <Card.Text className="text-info">
+                              <span className="badge bg-secondary">
+                                Industrial AI Applications
+                              </span>
+                            </Card.Text>
+                          </Card.Body>
+                        </Card>
+                      </Col>
+                    ))}
+                  </Row>
+                </Carousel.Item>
+
+                {/* --------------------------- Slide 6: Smart Manufacturing --------------------------- */}
+                <Carousel.Item interval={1000}>
+                  <Row className="justify-content-center g-4 pb-5">
+                    {[
+                      {
+                        title: "Industrial Augmented Reality",
+                        text: "AR applications for welding sequence training, virtual shipping method validation, quality virtual checklists, and Process Failure Mode & Effect Analysis (PFMEA) visualization.",
+                        // image: arImg,
+                        image: image,
+                      },
+                      {
+                        title: "Furnace Temperature Control with AI",
+                        text: "AI-powered monitoring using neural networks, linear regression, and time series analysis. Optimization via Genetic Algorithms, Differential Evolution, and MCMC methods (~747m³ gas consumed).",
+                        // image: furnaceImg,
+                        image: image,
+                      },
+                    ].map((item, idx) => (
+                      <Col xs={12} md={6} key={idx}>
+                        <Card className="w-84 mx-auto border-0 text-center bg-light shadow-sm h-100">
+                          <img
+                            className="d-block w-75 mx-auto mt-4"
+                            src={item.image}
+                            alt={item.title}
+                          />
+                          <Card.Body>
+                            <Card.Title className="text-dark">
+                              {item.title}
+                            </Card.Title>
+                            <Card.Text className="text-dark">
+                              {item.text}
+                            </Card.Text>
+                            <Card.Text className="text-info">
+                              <span className="badge bg-info text-dark">
+                                Smart Manufacturing & Industry 4.0
+                              </span>
+                            </Card.Text>
+                          </Card.Body>
+                        </Card>
+                      </Col>
+                    ))}
+                  </Row>
+                </Carousel.Item>
+
+                {/* --------------------------- Slide 7: Test Case & Effort Estimation --------------------------- */}
+                <Carousel.Item interval={1000}>
+                  <Row className="justify-content-center g-4 pb-5">
+                    {[
+                      {
+                        title: "Bayesian Effort Evaluation for Build Tasks",
+                        text: "Establishing baselines for Simple/Average/Complex task efforts using Bayesian probability. 10-fold cross validation showed planned vs actual: Simple <32/16, Average 32-56/41.52, Complex >56/90.8 hours.",
+                        image: image,
+                      },
+                      {
+                        title: "Test Case Selection Optimization",
+                        text: "Multi-objective optimization maximizing coverage based on Usage, Criticality, and Probability of Failure. Integer programming approach with functional and environmental constraints.",
+                        image: image,
+                      },
+                    ].map((item, idx) => (
+                      <Col xs={12} md={6} key={idx}>
+                        <Card className="w-84 mx-auto border-0 text-center bg-light shadow-sm h-100">
+                          <img
+                            className="d-block w-75 mx-auto mt-4"
+                            src={item.image}
+                            alt={item.title}
+                          />
+                          <Card.Body>
+                            <Card.Title className="text-dark">
+                              {item.title}
+                            </Card.Title>
+                            <Card.Text className="text-dark">
+                              {item.text}
+                            </Card.Text>
+                            <Card.Text className="text-info">
+                              <span className="badge bg-dark">
+                                Software Engineering & Quality
+                              </span>
                             </Card.Text>
                           </Card.Body>
                         </Card>
@@ -1351,9 +1840,9 @@ function Home() {
 
       <Container fluid className=" mt-5 bg-dark">
         <Container>
-          <p class=" research_title text-center mt-5 mb-5 pt-5 text-white">
+          {/* <p class=" research_title text-center mt-5 mb-5 pt-5 text-white">
             TEACHING HIGHLIGHTS
-          </p>
+          </p> */}
           <Carousel>
             {/*-------------------------------slide one--------------------------------*/}
             <Carousel.Item interval={1000}>
@@ -1670,26 +2159,30 @@ function Home() {
           <Container fluid className="mt-5 bg-dark">
             <Container>
               <Carousel>
-                {/* --------------------------- Slide 1 --------------------------- */}
+                {/* --------------------------- Slide 1: Multicultural Experience & Background --------------------------- */}
                 <Carousel.Item interval={1000}>
                   <Row className="justify-content-center g-4 pb-5">
                     {[
                       {
-                        title: "Deep Learning with Light",
-                        text: "A new method uses optics to accelerate machine-learning computations on smart speakers and other low-power connected devices.",
-                        link: "https://news.mit.edu/2022/optics-deep-learning-computations-1020",
+                        title: "Multicultural Teaching Experience",
+                        text: "Teaching across diverse cultures and languages: India (নমস্কার, नमस्ते), Mexico (Hola), United States & Canada (Hello). Passionate about education since childhood.",
+                        image: image,
+                        badge: "Global Educator",
+                        badgeColor: "bg-primary",
                       },
                       {
-                        title: "Learning on the Edge",
-                        text: "AI models continually learn from new data on edge devices, reducing energy cost and privacy risk.",
-                        link: "https://news.mit.edu/2022/machine-learning-edge-microcontroller-1004",
+                        title: "Educational Background",
+                        text: "Bachelor in Mechanical Engineering → M.Tech in Quality, Reliability & Operations Research → M.Tech in Computer Science → PhD in Computer Science. Comprehensive interdisciplinary foundation.",
+                        image: image,
+                        badge: "Academic Journey",
+                        badgeColor: "bg-success",
                       },
                     ].map((item, idx) => (
                       <Col xs={12} md={6} key={idx}>
                         <Card className="w-84 mx-auto border-0 text-center bg-light shadow-sm h-100">
                           <img
                             className="d-block w-75 mx-auto mt-4"
-                            src={image}
+                            src={item.image}
                             alt={item.title}
                           />
                           <Card.Body>
@@ -1700,14 +2193,9 @@ function Home() {
                               {item.text}
                             </Card.Text>
                             <Card.Text className="text-info">
-                              <a
-                                href={item.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-decoration-none"
-                              >
-                                click here to know more
-                              </a>
+                              <span className={`badge ${item.badgeColor}`}>
+                                {item.badge}
+                              </span>
                             </Card.Text>
                           </Card.Body>
                         </Card>
@@ -1716,26 +2204,30 @@ function Home() {
                   </Row>
                 </Carousel.Item>
 
-                {/* --------------------------- Slide 2 --------------------------- */}
+                {/* --------------------------- Slide 2: Teaching Interests --------------------------- */}
                 <Carousel.Item interval={1000}>
                   <Row className="justify-content-center g-4 pb-5">
                     {[
                       {
-                        title: "Neurodegenerative Disease Patterns",
-                        text: "A machine-learning method finds patterns of health decline in ALS, informing future clinical trial designs and mechanism discovery.",
-                        link: "https://news.mit.edu/2022/neurodegenerative-disease-can-progress-newly-identified-patterns-0927",
+                        title: "Core Computing Courses",
+                        text: "Introduction to Computing (Fall 2006), Programming and Analysis of Algorithm (Fall 2016), Numerical Methods and Optimization (Winter 2007, Fall 2008, Fall 2009, Fall 2017, Winter 2018).",
+                        image: image,
+                        badge: "Foundational Courses",
+                        badgeColor: "bg-info",
                       },
                       {
-                        title: "Translational AI Research",
-                        text: "The MIT-Pillar AI Collective will cultivate prospective entrepreneurs and drive innovation.",
-                        link: "https://news.mit.edu/2022/new-program-support-translational-research-ai-data-science-machine-learning-0927",
+                        title: "AI & Machine Learning Courses",
+                        text: "Artificial Intelligence (Fall 2015), Machine Learning and Big Data (Winter 2016), AI and its Application in Robotics (Fall 2016), Optimization in Image Analysis (Fall 2007, Fall 2017, Fall 2018).",
+                        image: image,
+                        badge: "Advanced AI/ML",
+                        badgeColor: "bg-danger",
                       },
                     ].map((item, idx) => (
                       <Col xs={12} md={6} key={idx}>
                         <Card className="w-84 mx-auto border-0 text-center bg-light shadow-sm h-100">
                           <img
                             className="d-block w-75 mx-auto mt-4"
-                            src={image}
+                            src={item.image}
                             alt={item.title}
                           />
                           <Card.Body>
@@ -1746,14 +2238,9 @@ function Home() {
                               {item.text}
                             </Card.Text>
                             <Card.Text className="text-info">
-                              <a
-                                href={item.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-decoration-none"
-                              >
-                                click here to know more
-                              </a>
+                              <span className={`badge ${item.badgeColor}`}>
+                                {item.badge}
+                              </span>
                             </Card.Text>
                           </Card.Body>
                         </Card>
@@ -1762,26 +2249,30 @@ function Home() {
                   </Row>
                 </Carousel.Item>
 
-                {/* --------------------------- Slide 3 --------------------------- */}
+                {/* --------------------------- Slide 3: Specialized Courses --------------------------- */}
                 <Carousel.Item interval={1000}>
                   <Row className="justify-content-center g-4 pb-5">
                     {[
                       {
-                        title: "In-home Wireless Tracking for Parkinson’s",
-                        text: "By continuously monitoring a patient’s gait speed, the system can assess condition severity between doctor visits.",
-                        link: "https://news.mit.edu/2022/home-wireless-parkinsons-progression-0921",
+                        title: "Medical & Graphics Courses",
+                        text: "Medical Image Processing (Winter 2018), 3D Graphics and Animation with 3DS Max (Winter 2011). Combining technical expertise with specialized domain applications.",
+                        image: image,
+                        badge: "Specialized Teaching",
+                        badgeColor: "bg-warning text-dark",
                       },
                       {
-                        title: "Computing for the Health of the Planet",
-                        text: "The MIT Schwarzman College of Computing welcomes new faculty addressing climate risks and environmental challenges.",
-                        link: "https://news.mit.edu/2022/computing-health-planet-new-faculty-0913",
+                        title: "Research Interests in Teaching",
+                        text: "Software Engineering, Image Processing, AI, Machine Learning, Computer Vision, Medical Imaging, BioInformatics, Robotics, Welding, Wire Arc Additive Manufacturing, Robot Arm Design.",
+                        image: image,
+                        badge: "Interdisciplinary",
+                        badgeColor: "bg-secondary",
                       },
                     ].map((item, idx) => (
                       <Col xs={12} md={6} key={idx}>
                         <Card className="w-84 mx-auto border-0 text-center bg-light shadow-sm h-100">
                           <img
                             className="d-block w-75 mx-auto mt-4"
-                            src={image}
+                            src={item.image}
                             alt={item.title}
                           />
                           <Card.Body>
@@ -1792,14 +2283,190 @@ function Home() {
                               {item.text}
                             </Card.Text>
                             <Card.Text className="text-info">
-                              <a
-                                href={item.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-decoration-none"
-                              >
-                                click here to know more
-                              </a>
+                              <span className={`badge ${item.badgeColor}`}>
+                                {item.badge}
+                              </span>
+                            </Card.Text>
+                          </Card.Body>
+                        </Card>
+                      </Col>
+                    ))}
+                  </Row>
+                </Carousel.Item>
+
+                {/* --------------------------- Slide 4: Thesis Supervision --------------------------- */}
+                <Carousel.Item interval={1000}>
+                  <Row className="justify-content-center g-4 pb-5">
+                    {[
+                      {
+                        title: "Thesis Supervision Areas",
+                        text: "Undergraduate: Leukocyte Detection, Spiral Bevel Gearbox Design. M.Tech CS: State-of-the-art & Proposed Snake algorithms. PhD: Software Effort, Schedule, and Defect Estimation.",
+                        image: image,
+                        badge: "Student Mentorship",
+                        badgeColor: "bg-primary",
+                      },
+                      {
+                        title: "Student Project: Robot Gripper Design",
+                        text: "Supervised students in designing adaptive and reconfigurable robot grippers using FEM analysis. Hands-on experience with industrial robotics applications.",
+                        image: image,
+                        badge: "Robotics Projects",
+                        badgeColor: "bg-success",
+                      },
+                    ].map((item, idx) => (
+                      <Col xs={12} md={6} key={idx}>
+                        <Card className="w-84 mx-auto border-0 text-center bg-light shadow-sm h-100">
+                          <img
+                            className="d-block w-75 mx-auto mt-4"
+                            src={item.image}
+                            alt={item.title}
+                          />
+                          <Card.Body>
+                            <Card.Title className="text-dark">
+                              {item.title}
+                            </Card.Title>
+                            <Card.Text className="text-dark">
+                              {item.text}
+                            </Card.Text>
+                            <Card.Text className="text-info">
+                              <span className={`badge ${item.badgeColor}`}>
+                                {item.badge}
+                              </span>
+                            </Card.Text>
+                          </Card.Body>
+                        </Card>
+                      </Col>
+                    ))}
+                  </Row>
+                </Carousel.Item>
+
+                {/* --------------------------- Slide 5: Industrial Experience --------------------------- */}
+                <Carousel.Item interval={1000}>
+                  <Row className="justify-content-center g-4 pb-5">
+                    {[
+                      {
+                        title: "Software Engineering Industry Projects",
+                        text: "Nonparametric Bootstrapping for bug fixing effort estimation. Integer Programming for test case selection optimization. Data-driven online project schedule controlling to reduce delay.",
+                        image: image,
+                        badge: "Industry Experience",
+                        badgeColor: "bg-dark",
+                      },
+                      {
+                        title: "Quality & Defect Management",
+                        text: "Statistical Customer Satisfaction Index (SCSI) based on delivery, quality & feedback. S/A/C baseline methodology using Bayes' theorem. Regression-based software defect management system.",
+                        image: image,
+                        badge: "Quality Engineering",
+                        badgeColor: "bg-info",
+                      },
+                    ].map((item, idx) => (
+                      <Col xs={12} md={6} key={idx}>
+                        <Card className="w-84 mx-auto border-0 text-center bg-light shadow-sm h-100">
+                          <img
+                            className="d-block w-75 mx-auto mt-4"
+                            src={item.image}
+                            alt={item.title}
+                          />
+                          <Card.Body>
+                            <Card.Title className="text-dark">
+                              {item.title}
+                            </Card.Title>
+                            <Card.Text className="text-dark">
+                              {item.text}
+                            </Card.Text>
+                            <Card.Text className="text-info">
+                              <span className={`badge ${item.badgeColor}`}>
+                                {item.badge}
+                              </span>
+                            </Card.Text>
+                          </Card.Body>
+                        </Card>
+                      </Col>
+                    ))}
+                  </Row>
+                </Carousel.Item>
+
+                {/* --------------------------- Slide 6: Research Grants --------------------------- */}
+                <Carousel.Item interval={1000}>
+                  <Row className="justify-content-center g-4 pb-5">
+                    {[
+                      {
+                        title: "Major Research Grant - Conacyt Mexico",
+                        text: "Potential Association between image-based phenotypes and genomic biomarkers for cancer therapeutic and prognostic decisions. Basic Science research fund as young investigator ($600,000, 2016-2019).",
+                        image: image,
+                        badge: "$600,000 Grant",
+                        badgeColor: "bg-danger",
+                      },
+                      {
+                        title: "Applied Research Grants",
+                        text: "Automatic passenger counting for Edmonton LRT ($30,000). Thermal image analysis for non-invasive disease detection from Alberta Veterinary Surveillance Network ($15,000).",
+                        image: image,
+                        badge: "Applied Projects",
+                        badgeColor: "bg-success",
+                      },
+                    ].map((item, idx) => (
+                      <Col xs={12} md={6} key={idx}>
+                        <Card className="w-84 mx-auto border-0 text-center bg-light shadow-sm h-100">
+                          <img
+                            className="d-block w-75 mx-auto mt-4"
+                            src={item.image}
+                            alt={item.title}
+                          />
+                          <Card.Body>
+                            <Card.Title className="text-dark">
+                              {item.title}
+                            </Card.Title>
+                            <Card.Text className="text-dark">
+                              {item.text}
+                            </Card.Text>
+                            <Card.Text className="text-info">
+                              <span className={`badge ${item.badgeColor}`}>
+                                {item.badge}
+                              </span>
+                            </Card.Text>
+                          </Card.Body>
+                        </Card>
+                      </Col>
+                    ))}
+                  </Row>
+                </Carousel.Item>
+
+                {/* --------------------------- Slide 7: Curriculum Design --------------------------- */}
+                <Carousel.Item interval={1000}>
+                  <Row className="justify-content-center g-4 pb-5">
+                    {[
+                      {
+                        title:
+                          "Curriculum Design: MSc in Computational Statistics",
+                        text: "Designed curriculum using Information Retrieval techniques. Referenced programs from UCL, NYU, UCF, and University of Maryland. Used cosine similarity for course matching.",
+                        image: image,
+                        badge: "Curriculum Development",
+                        badgeColor: "bg-primary",
+                      },
+                      {
+                        title: "Research Impact & Citations",
+                        text: "329 total citations, h-index: 8, i10-index: 7. Top cited: 'Quick detection of brain tumors using symmetry' (84 citations), 'Image thresholding by variational minimax' (51 citations).",
+                        image: image,
+                        badge: "Research Impact",
+                        badgeColor: "bg-warning text-dark",
+                      },
+                    ].map((item, idx) => (
+                      <Col xs={12} md={6} key={idx}>
+                        <Card className="w-84 mx-auto border-0 text-center bg-light shadow-sm h-100">
+                          <img
+                            className="d-block w-75 mx-auto mt-4"
+                            src={item.image}
+                            alt={item.title}
+                          />
+                          <Card.Body>
+                            <Card.Title className="text-dark">
+                              {item.title}
+                            </Card.Title>
+                            <Card.Text className="text-dark">
+                              {item.text}
+                            </Card.Text>
+                            <Card.Text className="text-info">
+                              <span className={`badge ${item.badgeColor}`}>
+                                {item.badge}
+                              </span>
                             </Card.Text>
                           </Card.Body>
                         </Card>
@@ -2136,7 +2803,7 @@ function Home() {
         </Row>
       </Container> */}
 
-      <Container fluid className="pb-5">
+      {/* <Container fluid className="pb-5">
         <p class=" research_title text-center">ADMINISTRATIVE ROLES</p>
         <Row>
           <Col>
@@ -2193,6 +2860,317 @@ function Home() {
             </Card>
           </Col>
         </Row>
+      </Container> */}
+
+      <p className="research_title text-center mt-5 mb-5 pt-5">
+        ADMINISTRATIVE ROLES
+      </p>
+
+      <Container fluid className="mt-5 bg-dark">
+        <Container className="py-5">
+          <Carousel>
+            {/* --------------------------- Slide 1: Leadership Positions --------------------------- */}
+            <Carousel.Item interval={1000}>
+              <Row className="justify-content-center g-4 pb-5">
+                {[
+                  {
+                    title: "Academic Leadership at CUE",
+                    text: "Associate Professor (July 2022 - Present), Assistant Professor (July 2019 - June 2022). Chair of Mathematical and Physical Sciences (2021-2024) at Concordia University of Edmonton, Canada.",
+                    image: image,
+                    badge: "Leadership",
+                    badgeColor: "bg-primary",
+                  },
+                  {
+                    title: "Program Director & Coordinator",
+                    text: "MSc-IT Program Director (June 2021 - June 2024). Coordinator, Information Technology Program (July 2019 - June 2021). Developer of New Courses for BSc and MSc in IT Programs (July 2021 - Present).",
+                    image: image,
+                    badge: "Program Management",
+                    badgeColor: "bg-success",
+                  },
+                ].map((item, idx) => (
+                  <Col xs={12} md={6} key={idx}>
+                    <Card className="w-84 mx-auto border-0 text-center bg-light shadow-sm h-100">
+                      <img
+                        className="d-block w-75 mx-auto mt-4"
+                        src={item.image}
+                        alt={item.title}
+                      />
+                      <Card.Body>
+                        <Card.Title className="text-dark">
+                          {item.title}
+                        </Card.Title>
+                        <Card.Text className="text-dark">{item.text}</Card.Text>
+                        <Card.Text className="text-info">
+                          <span className={`badge ${item.badgeColor}`}>
+                            {item.badge}
+                          </span>
+                        </Card.Text>
+                      </Card.Body>
+                    </Card>
+                  </Col>
+                ))}
+              </Row>
+            </Carousel.Item>
+
+            {/* --------------------------- Slide 2: Research Cluster & Industry Liaison --------------------------- */}
+            <Carousel.Item interval={1000}>
+              <Row className="justify-content-center g-4 pb-5">
+                {[
+                  {
+                    title: "Research Cluster Leadership",
+                    text: "Co-Director (Academic) of Interdisciplinary Research Cluster on Machine Learning & Artificial Intelligence (IRCMLAI) (June 2021 - June 2024).",
+                    image: image,
+                    badge: "Research Leadership",
+                    badgeColor: "bg-danger",
+                  },
+                  {
+                    title: "Industry Liaison",
+                    text: "Industry Liaison for Promoting AI and ML-Based Industrial Research through CIAR (July 2022 - July 2024). Bridging academia and industry for collaborative research initiatives.",
+                    image: image,
+                    badge: "Industry Partnerships",
+                    badgeColor: "bg-info",
+                  },
+                ].map((item, idx) => (
+                  <Col xs={12} md={6} key={idx}>
+                    <Card className="w-84 mx-auto border-0 text-center bg-light shadow-sm h-100">
+                      <img
+                        className="d-block w-75 mx-auto mt-4"
+                        src={item.image}
+                        alt={item.title}
+                      />
+                      <Card.Body>
+                        <Card.Title className="text-dark">
+                          {item.title}
+                        </Card.Title>
+                        <Card.Text className="text-dark">{item.text}</Card.Text>
+                        <Card.Text className="text-info">
+                          <span className={`badge ${item.badgeColor}`}>
+                            {item.badge}
+                          </span>
+                        </Card.Text>
+                      </Card.Body>
+                    </Card>
+                  </Col>
+                ))}
+              </Row>
+            </Carousel.Item>
+
+            {/* --------------------------- Slide 3: Educational Partnerships --------------------------- */}
+            <Carousel.Item interval={1000}>
+              <Row className="justify-content-center g-4 pb-5">
+                {[
+                  {
+                    title: "Dual Credit Courses Initiative",
+                    text: "Concordia Representative for Launching IT Dual Credit Courses (IT 101 and IT 110) with the Edmonton Catholic School District (ECSD) (June 2021 - June 2024).",
+                    image: image,
+                    badge: "K-12 Partnerships",
+                    badgeColor: "bg-warning text-dark",
+                  },
+                  {
+                    title: "AI Pathway Program",
+                    text: "Member, AI Course Curriculum Development Committee for the Artificial Intelligence Pathway Program (AIPP), in collaboration with NorQuest College (June 2021 - June 2024).",
+                    image: image,
+                    badge: "Curriculum Development",
+                    badgeColor: "bg-secondary",
+                  },
+                ].map((item, idx) => (
+                  <Col xs={12} md={6} key={idx}>
+                    <Card className="w-84 mx-auto border-0 text-center bg-light shadow-sm h-100">
+                      <img
+                        className="d-block w-75 mx-auto mt-4"
+                        src={item.image}
+                        alt={item.title}
+                      />
+                      <Card.Body>
+                        <Card.Title className="text-dark">
+                          {item.title}
+                        </Card.Title>
+                        <Card.Text className="text-dark">{item.text}</Card.Text>
+                        <Card.Text className="text-info">
+                          <span className={`badge ${item.badgeColor}`}>
+                            {item.badge}
+                          </span>
+                        </Card.Text>
+                      </Card.Body>
+                    </Card>
+                  </Col>
+                ))}
+              </Row>
+            </Carousel.Item>
+
+            {/* --------------------------- Slide 4: Council Representation --------------------------- */}
+            <Carousel.Item interval={1000}>
+              <Row className="justify-content-center g-4 pb-5">
+                {[
+                  {
+                    title: "General Faculties Council (GFC)",
+                    text: "GFC Representative (June 2021 - June 2024). Contributing to university-wide academic governance and policy development at Concordia University of Edmonton.",
+                    image: image,
+                    badge: "University Governance",
+                    badgeColor: "bg-primary",
+                  },
+                  {
+                    title: "Graduate & Science Faculty Councils",
+                    text: "Representative, Graduate Studies Faculty Council (July 2019 - June 2021). Member, Science Faculty Council (July 2019 - Present). Active participation in faculty governance.",
+                    image: image,
+                    badge: "Faculty Governance",
+                    badgeColor: "bg-success",
+                  },
+                ].map((item, idx) => (
+                  <Col xs={12} md={6} key={idx}>
+                    <Card className="w-84 mx-auto border-0 text-center bg-light shadow-sm h-100">
+                      <img
+                        className="d-block w-75 mx-auto mt-4"
+                        src={item.image}
+                        alt={item.title}
+                      />
+                      <Card.Body>
+                        <Card.Title className="text-dark">
+                          {item.title}
+                        </Card.Title>
+                        <Card.Text className="text-dark">{item.text}</Card.Text>
+                        <Card.Text className="text-info">
+                          <span className={`badge ${item.badgeColor}`}>
+                            {item.badge}
+                          </span>
+                        </Card.Text>
+                      </Card.Body>
+                    </Card>
+                  </Col>
+                ))}
+              </Row>
+            </Carousel.Item>
+
+            {/* --------------------------- Slide 5: Committee Memberships --------------------------- */}
+            <Carousel.Item interval={1000}>
+              <Row className="justify-content-center g-4 pb-5">
+                {[
+                  {
+                    title: "Faculty Hiring Committee",
+                    text: "Member, Faculty Hiring Committee (Mathematics, Information Technology, Science, and Management) (July 2019 - June 2024). Contributing to faculty recruitment and selection.",
+                    image: image,
+                    badge: "Hiring & Recruitment",
+                    badgeColor: "bg-dark",
+                  },
+                  {
+                    title: "Program Review & Development",
+                    text: "Program Review Committee Member for MISAM/MISSM programs (July-August 2022). MSc-IT program development committee member (July 2019 - December 2020).",
+                    image: image,
+                    badge: "Program Development",
+                    badgeColor: "bg-info",
+                  },
+                ].map((item, idx) => (
+                  <Col xs={12} md={6} key={idx}>
+                    <Card className="w-84 mx-auto border-0 text-center bg-light shadow-sm h-100">
+                      <img
+                        className="d-block w-75 mx-auto mt-4"
+                        src={item.image}
+                        alt={item.title}
+                      />
+                      <Card.Body>
+                        <Card.Title className="text-dark">
+                          {item.title}
+                        </Card.Title>
+                        <Card.Text className="text-dark">{item.text}</Card.Text>
+                        <Card.Text className="text-info">
+                          <span className={`badge ${item.badgeColor}`}>
+                            {item.badge}
+                          </span>
+                        </Card.Text>
+                      </Card.Body>
+                    </Card>
+                  </Col>
+                ))}
+              </Row>
+            </Carousel.Item>
+
+            {/* --------------------------- Slide 6: Grant Review & International Experience --------------------------- */}
+            <Carousel.Item interval={1000}>
+              <Row className="justify-content-center g-4 pb-5">
+                {[
+                  {
+                    title: "Grant Review Expertise",
+                    text: "Expert reviewer of CUE's Program to Assist Grant Endeavours (PAGE) (June 2021 - Present). Evaluating and supporting research grant applications within the university.",
+                    image: image,
+                    badge: "Grant Review",
+                    badgeColor: "bg-danger",
+                  },
+                  {
+                    title: "International Program Development",
+                    text: "Program Development Committee Member, Master's in Computational Statistics, Centro de Investigación en Matemáticas (CIMAT), Monterrey, Mexico (2015). International academic collaboration.",
+                    image: image,
+                    badge: "International Experience",
+                    badgeColor: "bg-warning text-dark",
+                  },
+                ].map((item, idx) => (
+                  <Col xs={12} md={6} key={idx}>
+                    <Card className="w-84 mx-auto border-0 text-center bg-light shadow-sm h-100">
+                      <img
+                        className="d-block w-75 mx-auto mt-4"
+                        src={item.image}
+                        alt={item.title}
+                      />
+                      <Card.Body>
+                        <Card.Title className="text-dark">
+                          {item.title}
+                        </Card.Title>
+                        <Card.Text className="text-dark">{item.text}</Card.Text>
+                        <Card.Text className="text-info">
+                          <span className={`badge ${item.badgeColor}`}>
+                            {item.badge}
+                          </span>
+                        </Card.Text>
+                      </Card.Body>
+                    </Card>
+                  </Col>
+                ))}
+              </Row>
+            </Carousel.Item>
+
+            {/* --------------------------- Slide 7: Diversity & Enrollment Initiatives --------------------------- */}
+            <Carousel.Item interval={1000}>
+              <Row className="justify-content-center g-4 pb-5">
+                {[
+                  {
+                    title: "Diversity & Enrollment Initiatives",
+                    text: "Program Review Committee Member, contributing to the Recruitment Group to enhance diversity, increase domestic enrollment, and strengthen industry partnerships for MISAM/MISSM programs (July-August 2022).",
+                    image: image,
+                    badge: "Diversity & Inclusion",
+                    badgeColor: "bg-primary",
+                  },
+                  {
+                    title: "Course Development",
+                    text: "Developer of New Courses for the BSc and MSc in IT Programs (July 2021 - Present). Continuously updating curriculum to meet industry demands and academic standards.",
+                    image: image,
+                    badge: "Curriculum Innovation",
+                    badgeColor: "bg-success",
+                  },
+                ].map((item, idx) => (
+                  <Col xs={12} md={6} key={idx}>
+                    <Card className="w-84 mx-auto border-0 text-center bg-light shadow-sm h-100">
+                      <img
+                        className="d-block w-75 mx-auto mt-4"
+                        src={item.image}
+                        alt={item.title}
+                      />
+                      <Card.Body>
+                        <Card.Title className="text-dark">
+                          {item.title}
+                        </Card.Title>
+                        <Card.Text className="text-dark">{item.text}</Card.Text>
+                        <Card.Text className="text-info">
+                          <span className={`badge ${item.badgeColor}`}>
+                            {item.badge}
+                          </span>
+                        </Card.Text>
+                      </Card.Body>
+                    </Card>
+                  </Col>
+                ))}
+              </Row>
+            </Carousel.Item>
+          </Carousel>
+        </Container>
       </Container>
 
       <blockquote className="w-50 mx-auto text-center text-info mb-0 quotes_cont ">
