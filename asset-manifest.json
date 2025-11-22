@@ -1,19 +1,29 @@
 {
   "files": {
     "main.css": "/static/css/main.b384e7ee.css",
-    "main.js": "/static/js/main.acf353ad.js",
+    "main.js": "/static/js/main.471800f6.js",
     "static/media/v2.mp4": "/static/media/v2.87d7f1b49ab5b882ef96.mp4",
     "static/media/v1.MOV": "/static/media/v1.8a7194b3c18f9748e6dd.MOV",
     "static/media/BaidyaCV_Canada.pdf": "/static/media/BaidyaCV_Canada.20f621e4d3298be55d5a.pdf",
+    "static/media/Research_Statement_ML.pdf": "/static/media/Research_Statement_ML.7ca0baa462358b839529.pdf",
+    "static/media/Research_Statement_Robotics.pdf": "/static/media/Research_Statement_Robotics.5d519491cfbec4be18fc.pdf",
+    "static/media/Research_Statement_MI.pdf": "/static/media/Research_Statement_MI.72330e2b241603975b0f.pdf",
+    "static/media/Research_Statement_IP.pdf": "/static/media/Research_Statement_IP.653c23b55fdde95b51c5.pdf",
+    "static/media/Teaching_Statement.pdf": "/static/media/Teaching_Statement.af1c5095d62af26ef085.pdf",
+    "static/media/IDGVF.png": "/static/media/IDGVF.94c57bfbf8ddab603558.png",
+    "static/media/snakeAutomation.gif": "/static/media/snakeAutomation.bc73de5bbd00b612b23a.gif",
     "static/media/Indianstatisticalinstitutelogo.png": "/static/media/Indianstatisticalinstitutelogo.01b2e4483563fd109c5b.png",
     "static/media/Baidya-1.jpeg": "/static/media/Baidya-1.f42440ca71565a818aac.jpeg",
     "static/media/bootstrap-icons.woff?": "/static/media/bootstrap-icons.1295669cd4e305c97f2c.woff",
     "static/media/Conacyt-logo.png": "/static/media/Conacyt-logo.0dc5b9a251a294e3b982.png",
     "static/media/white_img.webp": "/static/media/white_img.869c13169df01af196ac.webp",
+    "static/media/WeldingSequenceOptimization.png": "/static/media/WeldingSequenceOptimization.88447553e6f6c82626e8.png",
     "static/media/bootstrap-icons.woff2?": "/static/media/bootstrap-icons.92ea18a81d737146ff04.woff2",
     "static/media/Baidya Research Impact.jpg": "/static/media/Baidya Research Impact.bf27ffc3b4acc7f9598b.jpg",
+    "static/media/Diversity_Statement.pdf": "/static/media/Diversity_Statement.5348e3fb73b8d6b60787.pdf",
     "static/media/CCV-Baidya_NathSaha (2).pdf": "/static/media/CCV-Baidya_NathSaha (2).ae9e648664cb43700006.pdf",
     "static/media/CUE.png": "/static/media/CUE.7b79702a64d98cd095eb.png",
+    "static/media/Equity_Diversity_Inclusion.pdf": "/static/media/Equity_Diversity_Inclusion.31ad95f2e7bb2dea03e1.pdf",
     "static/media/NSERC.png": "/static/media/NSERC.7c6c2f65cecfbb84017e.png",
     "static/media/UofA.png": "/static/media/UofA.f174b334d630f07a263a.png",
     "static/media/Jadavpur_University_Logo.png": "/static/media/Jadavpur_University_Logo.e8cbfc6422e3c05d43f6.png",
@@ -22,10 +32,10 @@
     "static/media/NVIDIA_logo.png": "/static/media/NVIDIA_logo.54bde6dcf45b5f8f07af.png",
     "index.html": "/index.html",
     "main.b384e7ee.css.map": "/static/css/main.b384e7ee.css.map",
-    "main.acf353ad.js.map": "/static/js/main.acf353ad.js.map"
+    "main.471800f6.js.map": "/static/js/main.471800f6.js.map"
   },
   "entrypoints": [
     "static/css/main.b384e7ee.css",
-    "static/js/main.acf353ad.js"
+    "static/js/main.471800f6.js"
   ]
 }
