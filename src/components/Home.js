@@ -784,7 +784,7 @@ function Home() {
                 </Card>
               </Carousel.Item>
               <Carousel.Item
-                interval={5000}
+                interval={10000}
                 className="overflow-hidden"
                 style={{ height: "550px" }}
               >
@@ -815,6 +815,14 @@ function Home() {
                       </Card.Text>
                       <Card.Text className="mb-0 fs-5">
                         Software Reliability/Quality Engineering
+                      </Card.Text>
+
+                      <Card.Text className="mb-0 fs-5">
+                        <img
+                          src={snakeAutomationGif}
+                          style={{ width: "50%", height: "150px" }}
+                          alt="Snake Robot Automation"
+                        />
                       </Card.Text>
                     </div>
                   </Card.Body>
