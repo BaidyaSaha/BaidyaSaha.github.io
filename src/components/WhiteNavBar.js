@@ -174,10 +174,10 @@ function WhiteNavBar() {
                     </NavDropdown.Item>
                     <NavDropdown.Item>
                       <NavLink
-                        to="/others"
+                        to="/publications-others"
                         className="fs-5 text-decoration-none text-secondary"
                       >
-                        Others
+                        Other Publications 
                       </NavLink>
                     </NavDropdown.Item>
                     <NavDropdown.Item>
