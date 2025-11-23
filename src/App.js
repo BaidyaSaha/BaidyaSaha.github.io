@@ -36,11 +36,11 @@ export function App() {
         <Route path="/machine-learning" element={<Publications />} />
         <Route path="/computer-vision" element={<Publications />} />
         <Route path="/robots" element={<Publications />} />
-        <Route path="/weilding-process" element={<Publications />} />
+        <Route path="/welding-process" element={<Publications />} />
         <Route path="/predictive-maintenance" element={<Publications />} />
         <Route path="/cognitive-science" element={<Publications />} />
         <Route path="/nlp" element={<Publications />} />
-        <Route path="/others" element={<Publications />} />
+        <Route path="/publications-others" element={<Publications />} />
         <Route path="/long-term-goals" element={<Publications />} />
       </Routes>
     </div>

@@ -1758,7 +1758,7 @@ function Publications() {
   // Function for Others section
   const renderOthers = () => (
     <section id="example-9" className="blog_ct intro_title">
-      <h1>OTHERS</h1>
+      <h1>OTHER PUBLICATIONS</h1>
       <br />
       <section id="example-sub-A-collapsible">
         <h5 className="book_title">SIGNALS PROCESSING</h5>
@@ -2025,7 +2025,7 @@ function Publications() {
         return renderCognitiveScience();
       case "/nlp":
         return renderNLP();
-      case "/others":
+      case "/publications-others":
         return renderOthers();
       case "/long-term-goals":
         return renderLongTermGoals();
