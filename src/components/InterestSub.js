@@ -10,6 +10,29 @@ import WhiteNavBar from "./WhiteNavBar";
 import v1 from "./video/v1.MOV";
 import v2 from "./video/v2.mp4";
 
+import propMethod from "./image/wml/propMethod.png";
+import synthetic from "./image/wml/synthetic.png";
+import HLS from "./image/wml/HLS.png";
+import HLSsynthetic from "./image/wml/HLSsynthetic.png";
+import ARboost from "./image/wml/ARboost.png";
+import AR_boost from "./image/wml/AR_boost.png";
+import boost_convergence from "./image/wml/boost_convergence.png";
+import snake_automation from "./image/snake/snake_automation.png";
+import one_click_snake from "./image/snake/one_click_snake.png";
+import idgvf from "./image/snake/idgvf.png";
+import dirichlet_bc from "./image/snake/dirichlet_bc.gif";
+import dirichlet_bc_em from "./image/snake/dirichlet_bc_em.gif";
+import dirichlet_bc_vf from "./image/snake/dirichlet_bc_vf.gif";
+import idgvf1 from "./image/snake/idgvf.gif";
+import idgvf_em from "./image/snake/idgvf_em.gif";
+import idgvf_vf from "./image/snake/idgvf_vf.gif";
+import snake_valid_pca from "./image/snake/snake_valid_pca.png";
+import FBB from "./image/bts/FBB.png";
+import FBB_1 from "./image/bts//FBB_1.png";
+import accurate_tumor from "./image/bts/accurate_tumor.png";
+import mst_overview from "./image/mst/mst_overview.png";
+import mst_clustering from "./image/mst/mst_clustering.png";
+import registration_results from "./image/mst/registration_results.png";
 function InterestSub() {
   return (
     <>
@@ -41,16 +64,16 @@ function InterestSub() {
                 <Nav.Link
                   eventKey="three"
                   className="rounded-0 text-start py-4 fw-bold"
-                >
-                  NATURAL LANGUAGE PROCESSING
+                  >
+                  MEDICAL IMAGE PROCESSING
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
                 <Nav.Link
                   eventKey="four"
-                  className="rounded-0 text-start py-4  fw-bold"
+                  className="rounded-0 text-start py-4 fw-bold"
                 >
-                  INDUSTRY 4.0
+                  NATURAL LANGUAGE PROCESSING
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
@@ -58,12 +81,20 @@ function InterestSub() {
                   eventKey="five"
                   className="rounded-0 text-start py-4  fw-bold"
                 >
-                  COGNITIVE SCIENCE
+                  INDUSTRY 4.0
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
                 <Nav.Link
                   eventKey="six"
+                  className="rounded-0 text-start py-4  fw-bold"
+                >
+                  COGNITIVE SCIENCE
+                </Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link
+                  eventKey="seven"
                   className="rounded-0 text-start py-4 fw-bold"
                 >
                   MULTIMODAL SIGNAL PROCESSING
@@ -1165,10 +1196,340 @@ function InterestSub() {
                   </ListGroup>
                 </Card>
               </Tab.Pane>
+{/*------------------------------------------------------MEDICAL IMAGE PROCESSING---------------------------------------------------------*/}
+
+              <Tab.Pane eventKey="three" id="nlp" className="npl_cont">
+  <Card className="mt-5 pt-5 text-center border-0">
+    <Card.Title className="fs-1 text-decoration-underline mb-5 text-uppercase">
+      MEDICAL IMAGE PROCESSING
+    </Card.Title>
+  
+
+  <Tabs
+    defaultActiveKey="one-one"
+    id="justify-tab-example"
+    className="mb-5 pt-5 mt-5 mx-5"
+    justify
+  >
+    <Tab eventKey="one-one" title="CELL IMAGE SEGMENTATION">
+      <p className="researchSnake">
+        <b>Abstract:</b> For the last two decades active contour or snake has been
+        effective as an interactive image segmentation tool.in a wide range of applications, especially for blob-object delineation. In the interactive snake segmentation process, a user draws 
+								a rough object outline; next, a cost function is optimized to drive the user-drawn contour a.k.a. snake to delineate the desired object boundary. Although successful as an interactive segmentation tool, snake exhibits poor performances in various noteworthy image 
+								segmentation applications that require complete automation. Examples include oil sand particle delineation, biological cell segmentation and so on. This research presents a novel, completely automated snake/active contour algorithm for multiple blob-object delineation. 
+								The algorithm consists of three sequential steps: <b> (a) snake initialization: </b> where we apply a Probabilistic Quad Tree (PQT) based approximate segmentation technique on an image to find the regions of interest (ROI) where the probability of having objects is very high 
+								and place seeds uniformly within the ROIs; <b> (b) snake evolution: </b> where we evolve one novel Interleave Directional Gradient Vector Flow (IDGVF) snake from each seed; <b>(c) snake validation:</b> where we classify the snakes into object and non-object classes using a novel 
+								adaptive regularized boosting (ARboost). Existing efforts towards snake automation have concentrated only on the succession of initialization and evolution steps and have practically overlooked the snake validation step. Here, we emphasize that we cannot skip the 
+								validation step, even though the initialization and evolution have performed well. Our proposed novel validation step, executed after complete convergence of a snake contour from a given initialization, classifies the evolved contour into desired object and non-object 
+								classes. ARboost employs a novel loss function for boosting that enables to classify snakes more accurately into object and non-object classes than other variants of boosting. PQT generates substantially fewer seed points and is therefore more efficient than other 
+								initialization methods without degrading the segmentation performance. We have demonstrated that IDGVF is more robust to initialization and it possesses a broader capture range than other variants of GVF snakes. The proposed automated snake algorithm has been 
+								successfully applied to two real data sets: oil sand ore images that have relevance in the oil sand mining industry and leukocyte images that are significant in biomedical engineering.
+      </p>
+
+      <figure align="center">
+        <img
+          className="snake"
+          src={snake_automation}
+          width="700"
+          height="500"
+          alt="Snake Automation"
+        />
+        <figcaption align="center">
+          <b>Figure 1:</b> Snake Automation
+        </figcaption>
+      </figure>
+
+      <p className="researchSnake">
+          <b>Proposed Method:</b> Figure 9 shows that our method for snake automation consists of three steps: Snake initialization, snake evolution and snake validation. We propose a minimally interactive snake (one click snake) as shown in Figure 10 where snake can develop from a very small circle (~3 pixel radius).
+                                We introduce three additional modifications of gradient vector flow (GVF) snake to make it minimally interactive: (a) We adopt dirichlet boundary condition into snake energy functional; (b) We compute gradient vector field in an iterleave fashion: We compute gradient field and develop
+                                snake until convergence, then modify the gradient field and develop snake from the converged position of previous stage and continue this procedure until ther is no significant change found in the area delineated by the snake in the current iteration with that of previous iteration and (c) 
+								We introduce a directional term in the snake energy functional that pulls the snake towards the object edges.We call this minimally interactive snake as "Interleave Directional Gradient Vector Flow Snake" (IDGVF) and the algorithm of IDGVF is depicted in Figure 11.  Proposed modification helps in snake covergence on actual object edges as shown in Figure 12.
+                           </p>
+
+      <figure align="center">
+        <img
+          className="snake"
+          src={one_click_snake}
+          width="700"
+          height="500"
+          alt="Minimally interactive snake"
+        />
+        <figcaption align="center">
+          <b>Figure 2:</b> Minimally interactive snake
+        </figcaption>
+      </figure>
+
+      <figure align="center">
+        <img
+          className="snake"
+          src={idgvf}
+          width="700"
+          height="500"
+          alt="IDGVF snake"
+        />
+        <figcaption align="center">
+          <b>Figure 3:</b> Interleave Directional Gradient Vector Flow Snake
+        </figcaption>
+      </figure>
+
+      <figure className="snake-grid-figure">
+  <div className="snake-grid">
+    <img className="snake" src={dirichlet_bc} alt="Dirichlet BC" />
+    <img className="snake" src={dirichlet_bc_em} alt="Dirichlet BC EM" />
+    <img className="snake" src={dirichlet_bc_vf} alt="Dirichlet BC VF" />
+    <img className="snake" src={idgvf1} alt="IDGVF" />
+    <img className="snake" src={idgvf_em} alt="IDGVF EM" />
+    <img className="snake" src={idgvf_vf} alt="IDGVF VF" />
+  </div>
+
+  <figcaption className="text-center">
+    <b>Figure 4:</b> Snake Evolution : (Top row): Enhanced Generalized Gradient Vector Flow. (Bottom row): Proposed minimially interactive snake. (Left column): oil sand particle image; (Middle column): Edge map; (Right column): Gradient vector field.
+  </figcaption>
+</figure>
+
+      <figure align="center">
+        <img
+          className="snake"
+          src={snake_valid_pca}
+          width="700"
+          height="500"
+          alt="Snake Validation"
+        />
+        <figcaption align="center">
+          <b>Figure 5:</b> Snake Validation using PCA
+        </figcaption>
+      </figure>
+
+      <p className="researchSnake">
+        <b>Snake Validation by PCA:</b> When we evolve snakes from initial seed points, we construct a "pattern image" by taking an annular band acorss each object edge and then warped into a rectangular image for computational convenience. Pattern image carries intensity transitions across object edges which
+                            discriminate desired objects from clutter. We use pattern image for PCA classification. Pattern image associated with low PCA reconstruction error belong to desired object class as shown in Figure 13.	For further details, please read our papers:
+							   <li>B. N. Saha, N. Ray, and H. Zhang,
+                                       <b> Snake validation: A PCA-based outlier detection method.</b>
+                                       <i>IEEE Signal Processing Letters</i>, vol. 16, issue 6, pp. 549-552, 2009.
+                               </li>	
+                               <li>B. N. Saha, N. Ray, and H. Zhang,
+                                       <b>Automating Snakes for Multiple Objects Detection.</b>
+                                       <i>ACCV'10: 10<sup>th</sup> Asian Conference on Computer Vision</i>, Queenstown, New Zealand, 2010.
+                               </li>							   
+      </p>
+    </Tab>
+    <Tab eventKey="one-two" title="BRAIN TUMOR SEGMENTATION" >
+      <h4>Quick detection of brain tumors and edemas: A bounding box method using left-right brain symmetry</h4>
+						   <p class="researchContent">
+                                <b>Abstract:</b>A significant medical informatics task is indexing patient databases according to size, location, and other characteristics of brain tumors and edemas, possibly based on magnetic resonance (MR) imagery. This requires segmenting tumors and edemas within images from different MR modalities. To date, automated 
+						   brain tumor or edema segmentation from MR modalities remains a challenging, computationally intensive task. In this paper, we propose a novel automated, fast, and approximate segmentation technique. The input is a patient study consisting of a set of MR slices, and its output is a subset of the slices that 
+						   include axis-parallel boxes that circumscribe the tumors. Our approach is based on an unsupervised change detection method that searches for the most dissimilar region (axis-parallel bounding boxes) between the left and the right halves of a brain in an axial view MR slice. This change detection process uses 
+						   a novel score function based on Bhattacharya coefficient computed with gray level intensity histograms. We prove that this score function admits a very fast (linear in image height and width) search to locate the bounding box. 
+						   </p>
+						   <figure align = "center">
+						   <img class="proposed Method" src={FBB} width="700" height="500" alt="Fast Bounding Box"/>
+                           <figcaption align = "center"><b> Figure 1: </b> Fast Bounding Box (FBB) </figcaption>
+						   </figure>
+						   <p class="researchContent">
+                                <b>Proposed Method:</b>We propose two sequential line search; one vertical and one horizontal and computes a score function based on Bhattacharya Coefficient (BC) at each line position  as shown in Figure 14. The minimum and maximum value of the score function gives the end position of the anomaly as shown in Figure 14 and Figure 15.
+							Accurate segmentation methods fail to segment brain tumor boundary successfully. However, these accurate segmentation methods such as Chan-Vese and Normalized graph cut method can successfully delineate tumor boundary if they are applied within the bounding box automatically found from the proposed "Fast Bounding Box" (FBB) as shown in
+                            Figure 16.							
+						   </p>
+						   <figure align = "center">
+						   <img class="proposed Method" src={FBB_1} width="700" height="500" alt="FBB for Brain Tumor"/>
+						   <figcaption align = "center"><b> Figure 2: </b> Fast Bounding Box (FBB) for brain tumor detection.</figcaption>
+						   </figure>
+						   <figure align = "center">
+						   <img class="proposed Method" src={accurate_tumor} width="700" height="500" alt="Accurate Tumor"/>
+						   <figcaption align = "center"><b> Figure 3: </b> Accurate Segmentation of Brain Tumor.</figcaption>
+						   </figure>
+						   For more details, please read our paper:
+							   <li>B. N. Saha, N. Ray, R. Greiner, A. Murtha and H. Zhang,
+                                       <b>Quick detection of brain tumors and edemas: A bounding box method using symmetry.</b>
+                                       <i>Computerized Medical Imaging and Graphics</i>, vol. 36,  issue 2, pp. 95-107, 2012. 
+                               </li>
+    </Tab>
+
+    {/* ================= WHITE MATTER LESION SEGMENTATION ================= */}
+    <Tab eventKey="one-three" title="WHITE MATTER LESION SEGMENTATION">
+      <p className="researchContent">
+        <b>Abstract:</b> Hierarchical as well as coupled level sets are widely used
+        for multilevel image segmentation. However, these tools are successful if
+        the number of levels of an image are known and a careful choice of
+        initialization is performed. We propose a novel Hierarchical Level Set
+        (HLS) followed by Adaptive Regularized Boosting (AR-Boost) for automatic
+        White Matter Lesion (WML) segmentation from MRI. HLS does not require prior
+        knowledge of the number of regions, is computationally efficient, and
+        avoids redundant partitions. An energy functional minimizing the negative
+        log variance between partitions is used, and AR-Boost improves
+        classification by emphasizing misclassified samples, leading to faster
+        convergence. Experimental results demonstrate superior performance over
+        state-of-the-art methods.
+      </p>
+
+      <figure align="center">
+        <img
+          className="proposedMethod"
+          src= {propMethod}
+          width="700"
+          height="400"
+          alt="Proposed Method - White Matter Lesion Segmentation"
+        />
+        <figcaption>
+          <b>Figure 1:</b> Proposed Methodology for White Matter Lesion Segmentation
+        </figcaption>
+      </figure>
+
+      <p className="researchContent">
+        <b>Proposed Method:</b> The algorithm takes 3D T1 and FLAIR MRI sequences as
+        input and outputs detected white matter lesions. White matter masks are
+        extracted from T1 images, registered to bias-corrected FLAIR images, and
+        segmented using HLS. AR-Boost then classifies regions into lesion and
+        non-lesion categories.
+      </p>
+
+      <figure align="center">
+        <img
+          className="proposedMethod"
+          src={synthetic}
+          width="700"
+          height="250"
+          alt="Hierarchical Level Sets on synthetic image"
+        />
+        <figcaption>
+          <b>Figure 2:</b> Coupled vs Hierarchical Level Sets on synthetic image
+        </figcaption>
+      </figure>
+
+      <p className="researchContent">
+        <b>Hierarchical Level Set Method:</b> Unlike coupled level sets that require
+        multiple initializations, HLS recursively applies a two-partition level
+        set based on variance criteria until homogeneous regions are obtained.
+        This yields stable segmentation with reduced initialization sensitivity.
+      </p>
+
+      <figure align="center">
+        <img
+          className="proposedMethod"
+          src={HLS}
+          width="700"
+          height="500"
+          alt="Hierarchical Level Sets"
+        />
+        <figcaption>
+          <b>Figure 3:</b> Hierarchical Level Set Algorithm
+        </figcaption>
+      </figure>
+
+      <figure align="center">
+        <img
+          className="proposedMethod"
+          src={HLSsynthetic}
+          width="700"
+          height="400"
+          alt="HLS on synthetic image"
+        />
+        <figcaption>
+          <b>Figure 4:</b> HLS on synthetic image
+        </figcaption>
+      </figure>
+
+      <p className="researchContent">
+        <b>Adaptive Regularized Boosting:</b> AR-Boost introduces a regularization
+        term in the exponential loss function, assigning greater emphasis to
+        misclassified samples than AdaBoost while allowing optimal weight
+        selection via cross-validation. This leads to faster and more stable
+        convergence.
+      </p>
+
+      <figure align="center">
+        <img
+          className="proposedMethod"
+          src={ARboost}
+          width="700"
+          height="500"
+          alt="AR-Boost Loss Function"
+        />
+        <figcaption>
+          <b>Figure 5:</b> AR-Boost Loss Function
+        </figcaption>
+      </figure>
+
+      <figure align="center">
+        <img
+          className="proposedMethod"
+          src={AR_boost}
+          width="700"
+          height="500"
+          alt="AR-Boost Algorithm"
+        />
+        <figcaption>
+          <b>Figure 6:</b> AR-Boost Algorithm
+        </figcaption>
+      </figure>
+
+      <figure align="center">
+        <img
+          className="proposedMethod"
+          src={boost_convergence}
+          width="700"
+          height="500"
+          alt="Boosting convergence"
+        />
+        <figcaption>
+          <b>Figure 7:</b> Convergence of Boosting Algorithms
+        </figcaption>
+      </figure>
+
+      <p className="researchContent">
+        <b>Experimental Results:</b> MRI data from diabetic and control subjects
+        acquired at Wake Forest University demonstrate that the proposed HLS +
+        AR-Boost framework outperforms existing automated WML segmentation
+        techniques.
+        <br />
+        <b>Reference:</b> B. N. Saha et al., <i>ICMLA 2012</i>.
+      </p>
+    </Tab>
+
+    <Tab eventKey="one-four" title="IMAGE REGISTRATION" >
+      <h4>Optimal Sequence Selection for Deformable Registration of Microscopy Image Sequences Using MST-Based Clustering</h4> 
+      <p class="researchContent"> <b>Abstract:</b> Long time-sequenced in vivo microscopy images often suffer from motion artifacts, 
+      illumination drift, defocus, and intermittent poor-quality frames, which severely degrade the performance of conventional serial 
+      image registration methods due to error propagation. We propose a novel, fully automated two-stage deformable registration framework
+      based on Minimum Spanning Tree (MST)–driven sequence reordering and graph clustering. The method reorders image sequences so that 
+      poor-quality frames appear toward the end of the registration process, thereby mitigating error accumulation. An automatic anchor 
+      image selection strategy based on entropy and mean squared error further eliminates user intervention. Extensive experiments on 2D 
+      and 3D intravital microscopy datasets demonstrate that the proposed approach consistently outperforms state-of-the-art rigid and 
+      deformable registration techniques. </p> 
+      <figure align="center"> <img class="proposed Method" src={mst_overview} width="1200" height="500" alt="MST-based Registration Framework"/> 
+      <figcaption align="center"><b>Figure 1:</b> Overview of the MST-based clustering and sequence reordering framework for deformable image registration.</figcaption> 
+      </figure> 
+      <p class="researchContent"> <b>Proposed Method:</b> The framework consists of three key stages. First, an MST is constructed over 
+      the image sequence using pairwise registration costs, enabling optimal reordering that pushes poor-quality images to the tail of 
+      the sequence. The MST is then partitioned into clusters via graph cuts, allowing local registration within visually coherent subgroups. 
+      Second, an automatic anchor image is selected for each cluster through iterative evaluation of entropy and registration error, ensuring 
+      robust alignment without manual selection. Finally, a two-stage deformable registration is performed: images are first aligned to their 
+      local cluster anchors and subsequently refined against a global anchor to incrementally accommodate large drifts and distortions. 
+      </p> <figure align="center"> <img class="proposed Method" src={mst_clustering} width="1200" height="500" alt="MST Clustering"/> 
+      <figcaption align="center"><b>Figure 2:</b> Minimum Spanning Tree construction and clustering for optimal sequence reordering.</figcaption> </figure> 
+      <p class="researchContent"> <b>Two-Stage Deformable Registration:</b> Unlike conventional one-shot registration approaches, the proposed 
+      two-stage strategy decomposes large deformations into smaller, manageable increments. Local intra-cluster registration captures fine-scale 
+      variations, while global inter-cluster registration ensures spatial consistency across the entire sequence. This hierarchical approach 
+      significantly improves robustness in the presence of illumination changes, focal drift, and motion artifacts commonly observed in long 
+      in vivo microscopy acquisitions. </p> 
+      <figure align="center"> <img class="proposed Method" src={registration_results} width="1000" height="300" alt="Registration Results"/> 
+      <figcaption align="center"><b>Figure 3:</b> Quantitative and qualitative registration results demonstrating improved alignment using MST-based clustering.</figcaption> </figure> 
+      <p class="researchContent"> <b>Experimental Results:</b> The method was evaluated on multiple 2D and 3D intravital microscopy datasets of 
+      mouse arteries used in atherosclerosis studies. Performance was assessed using structural similarity index (SSIM) and compared against widely
+      used rigid and deformable registration techniques, including StackReg, TurboReg, MISTICA, elastic registration, and diffeomorphic demons. Across
+      all datasets, the proposed MST-based two-stage deformable registration consistently achieved higher SSIM scores and reduced error propagation, 
+      demonstrating state-of-the-art performance for long, noisy image sequences. </p> 
+      <p class="researchContent"> 
+      <b>Reference:</b><br/> B. N. Saha, N. Ray, S. McArdle, and K. Ley, <b>Selecting the Optimal Sequence for Deformable 
+      Registration of Microscopy Image Sequences Using Two-Stage MST-Based Clustering.</b> <i>Proceedings of MICCAI 2017</i>, LNCS 10433, pp. 353–361, Springer. </p>
+    </Tab>  
+  </Tabs>
+  </Card>
+</Tab.Pane>
 
               {/*------------------------------------------------------NATURAL LANGUAGE PROCESSING---------------------------------------------------------*/}
 
-              <Tab.Pane eventKey="three" id="nlp" className="npl_cont">
+              <Tab.Pane eventKey="four" id="nlp" className="npl_cont">
                 <Card className="mt-5 pt-5 text-center border-0 ">
                   <Card.Title className="fs-1 text-decoration-underline mb-5 text-uppercase">
                     NATURAL LANGUAGE PROCESSING
@@ -1191,7 +1552,7 @@ function InterestSub() {
               </Tab.Pane>
 
               {/*------------------------------------------------------INDUSTRY 4.0---------------------------------------------------------*/}
-              <Tab.Pane eventKey="four" className="mb-5" id="indust">
+              <Tab.Pane eventKey="five" className="mb-5" id="indust">
                 <Card className="mt-5 pt-5 text-center border-0 ">
                   <Card.Title className="fs-1 text-decoration-underline mb-5">
                     INDUSTRY 4.0
@@ -1705,7 +2066,7 @@ function InterestSub() {
               </Tab.Pane>
               {/*------------------------------------------Cognitive Science-----------------------------------------------------*/}
 
-              <Tab.Pane eventKey="five" id="cs">
+              <Tab.Pane eventKey="six" id="cs">
                 <Card className="mt-5 pt-5 text-center border-0 ">
                   <Card.Title className="fs-1 text-decoration-underline mb-5 text-uppercase">
                     Cognitive Science
@@ -1763,7 +2124,7 @@ function InterestSub() {
               </Tab.Pane>
               {/*------------------------------------------Multimodal Signal Processing-----------------------------------------------------*/}
 
-              <Tab.Pane eventKey="six" id="msp">
+              <Tab.Pane eventKey="seven" id="msp">
                 <Card className="mt-5 pt-5 text-center border-0 ">
                   <Card.Title className="fs-1 text-decoration-underline mb-5 text-uppercase">
                     Multimodal Signal Processing
@@ -1811,4 +2172,4 @@ function InterestSub() {
   );
 }
 
-export default InterestSub;
+export default InterestSub

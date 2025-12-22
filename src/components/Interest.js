@@ -77,130 +77,94 @@ function Interest() {
       {/*----------------------------------------------------Interest About ends-----------------------------------------*/}
 
       <Container fluid className="int_card_bg py-5">
-        <Container className="my-5">
-          <Row className="mx-auto w-75">
-            <Col
-              sm
-              className="bg-white py-4 me-4 mb-3 interest_card border-top border-info border-5   "
-            >
-              <Card.Text className="text-center fs-6 fw-bold text-uppercase px-5 py-3">
-                Machine Learning & AI
-              </Card.Text>
-              <Col className="text-center mt-4">
-                <Button
-                  className=" text-center mt-4 btn btn-dark "
-                  variant="dark"
-                >
-                  <NavLink
-                    to="/interestsub"
-                    className="fs-5 text-decoration-none text-white"
-                  >
-                    Learn More
-                  </NavLink>
-                </Button>
-              </Col>
-            </Col>
-            <Col
-              sm
-              className="bg-white py-4 me-4 mb-3 interest_card border-top  border-5  border-info "
-            >
-              <Card.Text className="text-center fs-6 fw-bold text-uppercase px-5 py-3">
-                Computer Vision & Image Processing
-              </Card.Text>
-              <Col className="text-center mt-4">
-                <Button className=" text-center btn btn-dark " variant="dark">
-                  <NavLink
-                    to="/interestsub"
-                    className="fs-5 text-decoration-none text-white"
-                  >
-                    Learn More
-                  </NavLink>
-                </Button>
-              </Col>
-            </Col>
-            <Col
-              sm
-              className="bg-white py-4 me-4 mb-3 interest_card border-top  border-5  border-info"
-            >
-              <Card.Text className="text-center fs-6 fw-bold text-uppercase px-5 py-3">
-                Natural Language Processing
-              </Card.Text>
-              <Col className="text-center mt-4">
-                <Button className=" text-center btn  btn-dark" variant="dark">
-                  <NavLink
-                    to="/interestsub"
-                    className="fs-5 text-decoration-none text-white"
-                  >
-                    Learn More
-                  </NavLink>
-                </Button>
-              </Col>
-            </Col>
-          </Row>
-          <Row className="mt-5 mx-auto w-75">
-            <Col
-              sm
-              className="bg-white py-4 me-4 mb-3 interest_card border-top  border-5  border-info"
-            >
-              <Card.Text className="text-center fs-6 fw-bold text-uppercase px-5 py-3">
-                Industry 4.0
-              </Card.Text>
-              <Col className="text-center mt-4">
-                <Button
-                  className=" text-center mt-4 btn  btn-dark "
-                  variant="dark"
-                >
-                  <NavLink
-                    to="/interestsub"
-                    className="fs-5 text-decoration-none text-white"
-                  >
-                    Learn More
-                  </NavLink>
-                </Button>
-              </Col>
-            </Col>
-            <Col
-              sm
-              className="bg-white py-4 me-4 mb-3 interest_card border-top  border-5  border-info"
-            >
-              <Card.Text className="text-center fs-6 fw-bold text-uppercase px-5 py-3">
-                Cognitive Science
-              </Card.Text>
-              <Col className="text-center mt-4">
-                <Button
-                  className=" text-center mt-4 btn  btn-dark"
-                  variant="dark"
-                >
-                  <NavLink
-                    to="/interestsub"
-                    className="fs-5 text-decoration-none text-white"
-                  >
-                    Learn More
-                  </NavLink>
-                </Button>
-              </Col>
-            </Col>
-            <Col
-              sm
-              className="bg-white py-4 me-4 mb-3 interest_card border-top  border-5  border-info"
-            >
-              <Card.Text className="text-center fs-6 fw-bold text-uppercase px-5 py-3">
-                Multimodal Signal Processing
-              </Card.Text>
-              <Col className="text-center mt-4">
-                <Button className=" text-center btn  btn-dark " variant="dark">
-                  <NavLink
-                    to="/interestsub"
-                    className="fs-5 text-decoration-none text-white"
-                  >
-                    Learn More
-                  </NavLink>
-                </Button>
-              </Col>
-            </Col>
-          </Row>
-        </Container>
-      </Container>
+  <Container className="my-5">
+    {/* ===== ROW 1 ===== */}
+    <Row className="mx-auto w-75 g-4">
+      <Col sm={6} md={3} className="interest_card bg-white py-4 border-top border-5 border-info">
+        <Card.Text className="text-center fs-6 fw-bold text-uppercase px-3 py-3">
+          Machine Learning & AI
+        </Card.Text>
+        <div className="text-center mt-4">
+          <NavLink to="/interestsub" className="btn btn-dark fs-5">
+            Learn More
+          </NavLink>
+        </div>
+      </Col>
+
+      <Col sm={6} md={3} className="interest_card bg-white py-4 border-top border-5 border-info">
+        <Card.Text className="text-center fs-6 fw-bold text-uppercase px-3 py-3">
+          Computer Vision & Image Processing
+        </Card.Text>
+        <div className="text-center mt-4">
+          <NavLink to="/interestsub" className="btn btn-dark fs-5">
+            Learn More
+          </NavLink>
+        </div>
+      </Col>
+
+      <Col sm={6} md={3} className="interest_card bg-white py-4 border-top border-5 border-info">
+        <Card.Text className="text-center fs-6 fw-bold text-uppercase px-3 py-3">
+          Medical Image Processing
+        </Card.Text>
+        <div className="text-center mt-4">
+          <NavLink to="/interestsub" className="btn btn-dark fs-5">
+            Learn More
+          </NavLink>
+        </div>
+      </Col>
+
+      <Col sm={6} md={3} className="interest_card bg-white py-4 border-top border-5 border-info">
+        <Card.Text className="text-center fs-6 fw-bold text-uppercase px-3 py-3">
+          Natural Language Processing
+        </Card.Text>
+        <div className="text-center mt-4">
+          <NavLink to="/interestsub" className="btn btn-dark fs-5">
+            Learn More
+          </NavLink>
+        </div>
+      </Col>
+    </Row>
+
+    {/* ===== ROW 2 ===== */}
+    <Row className="mx-auto w-75 g-4 mt-4">
+      <Col sm={6} md={3} className="interest_card bg-white py-4 border-top border-5 border-info">
+        <Card.Text className="text-center fs-6 fw-bold text-uppercase px-3 py-3">
+          Industry 4.0
+        </Card.Text>
+        <div className="text-center mt-4">
+          <NavLink to="/interestsub" className="btn btn-dark fs-5">
+            Learn More
+          </NavLink>
+        </div>
+      </Col>
+
+      <Col sm={6} md={3} className="interest_card bg-white py-4 border-top border-5 border-info">
+        <Card.Text className="text-center fs-6 fw-bold text-uppercase px-3 py-3">
+          Cognitive Science
+        </Card.Text>
+        <div className="text-center mt-4">
+          <NavLink to="/interestsub" className="btn btn-dark fs-5">
+            Learn More
+          </NavLink>
+        </div>
+      </Col>
+
+      <Col sm={6} md={3} className="interest_card bg-white py-4 border-top border-5 border-info">
+        <Card.Text className="text-center fs-6 fw-bold text-uppercase px-3 py-3">
+          Multimodal Signal Processing
+        </Card.Text>
+        <div className="text-center mt-4">
+          <NavLink to="/interestsub" className="btn btn-dark fs-5">
+            Learn More
+          </NavLink>
+        </div>
+      </Col>
+
+      {/* Optional placeholder to keep 4-column symmetry */}
+      <Col sm={6} md={3} className="d-none d-md-block" />
+    </Row>
+  </Container>
+</Container>
 
       {/*----------------------------------------------------Interest topics ends-----------------------------------------*/}
       <Card.Footer className="text-center fs-5 bg-white rounded-0 border-top pt-3 pb-2 text-secondary fw-normal others_card">

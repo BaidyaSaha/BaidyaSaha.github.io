@@ -31,3 +31,22 @@
 .dropdown-menu {
   transition: opacity 0.2s ease-in-out;
 }
+
+.snake-grid-figure {
+  text-align: center;
+  margin: 2rem auto;
+}
+
+.snake-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 225px);
+  grid-template-rows: repeat(2, auto);
+  gap: 12px;
+  justify-content: center;
+}
+
+.snake-grid img.snake {
+  width: 225px;
+  height: 250px;
+  object-fit: contain;
+}
