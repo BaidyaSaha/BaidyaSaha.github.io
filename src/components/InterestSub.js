@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Nav from "react-bootstrap/Nav";
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
@@ -33,14 +33,59 @@ import accurate_tumor from "./image/bts/accurate_tumor.png";
 import mst_overview from "./image/mst/mst_overview.png";
 import mst_clustering from "./image/mst/mst_clustering.png";
 import registration_results from "./image/mst/registration_results.png";
-function InterestSub() {
+
+/* =====================================================
+   Tab ↔ URL slug mapping
+===================================================== */
+const TAB_TO_SLUG = {
+  one: "ml",
+  two: "cv",
+  three: "medical",
+  four: "nlp",
+  five: "industry4",
+  six: "cognitive",
+  seven: "multimodal",
+};
+
+const SLUG_TO_TAB = Object.fromEntries(
+  Object.entries(TAB_TO_SLUG).map(([k, v]) => [v, k])
+);
+
+/* =====================================================
+   Resolve active tab from URL
+===================================================== */
+function getActiveTabFromHash() {
+  const parts = window.location.hash.split("/");
+  const slug = parts[2];
+  return SLUG_TO_TAB[slug] || "one";
+}
+
+/* =====================================================
+   Component
+===================================================== */
+export default function InterestSub() {
+  const [activeKey, setActiveKey] = useState(getActiveTabFromHash());
+
+  /* Sync when user navigates via browser controls */
+  useEffect(() => {
+    const onHashChange = () => setActiveKey(getActiveTabFromHash());
+    window.addEventListener("hashchange", onHashChange);
+    return () => window.removeEventListener("hashchange", onHashChange);
+  }, []);
+
+  /* Update URL when tab changes */
+  const handleSelect = (key) => {
+    setActiveKey(key);
+    window.location.hash = `/interestsub/${TAB_TO_SLUG[key]}`;
+  };
+
   return (
     <>
       <WhiteNavBar />
 
       {/*----------------------------------------------Interest Sub Nav bar ends-------------------------------------------*/}
 
-      <Tab.Container id="left-tabs-example" defaultActiveKey="one">
+      <Tab.Container activeKey={activeKey} onSelect={handleSelect}>
         <Row>
           <Col sm={2} className="border-end pe-0">
             <Nav variant="pills" className="flex-column">
@@ -2171,5 +2216,3 @@ function InterestSub() {
     </>
   );
 }
-
-export default InterestSub

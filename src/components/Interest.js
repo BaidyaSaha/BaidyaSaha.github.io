@@ -85,7 +85,7 @@ function Interest() {
           Machine Learning & AI
         </Card.Text>
         <div className="text-center mt-4">
-          <NavLink to="/interestsub" className="btn btn-dark fs-5">
+          <NavLink to="/interestsub/ml" className="btn btn-dark fs-5">
             Learn More
           </NavLink>
         </div>
@@ -96,7 +96,7 @@ function Interest() {
           Computer Vision & Image Processing
         </Card.Text>
         <div className="text-center mt-4">
-          <NavLink to="/interestsub" className="btn btn-dark fs-5">
+          <NavLink to="/interestsub/cv" className="btn btn-dark fs-5">
             Learn More
           </NavLink>
         </div>
@@ -107,7 +107,7 @@ function Interest() {
           Medical Image Processing
         </Card.Text>
         <div className="text-center mt-4">
-          <NavLink to="/interestsub" className="btn btn-dark fs-5">
+          <NavLink to="/interestsub/medical" className="btn btn-dark fs-5">
             Learn More
           </NavLink>
         </div>
@@ -118,7 +118,7 @@ function Interest() {
           Natural Language Processing
         </Card.Text>
         <div className="text-center mt-4">
-          <NavLink to="/interestsub" className="btn btn-dark fs-5">
+          <NavLink to="/interestsub/nlp" className="btn btn-dark fs-5">
             Learn More
           </NavLink>
         </div>
@@ -132,7 +132,7 @@ function Interest() {
           Industry 4.0
         </Card.Text>
         <div className="text-center mt-4">
-          <NavLink to="/interestsub" className="btn btn-dark fs-5">
+          <NavLink to="/interestsub/industry4" className="btn btn-dark fs-5">
             Learn More
           </NavLink>
         </div>
@@ -143,7 +143,7 @@ function Interest() {
           Cognitive Science
         </Card.Text>
         <div className="text-center mt-4">
-          <NavLink to="/interestsub" className="btn btn-dark fs-5">
+          <NavLink to="/interestsub/cognitive" className="btn btn-dark fs-5">
             Learn More
           </NavLink>
         </div>
@@ -154,7 +154,7 @@ function Interest() {
           Multimodal Signal Processing
         </Card.Text>
         <div className="text-center mt-4">
-          <NavLink to="/interestsub" className="btn btn-dark fs-5">
+          <NavLink to="/interestsub/multimodal" className="btn btn-dark fs-5">
             Learn More
           </NavLink>
         </div>

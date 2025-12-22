@@ -1,5 +1,6 @@
 import { Route } from "react-router-dom";
 import { Routes } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import Home from "./components/Home";
 import Philosophy from "./components/Philosophy";
 import PgCourses from "./components/PgCourses";
@@ -25,7 +26,8 @@ export function App() {
         <Route path="/ugcourses" element={<UGCourses />} />
         <Route path="/supervision" element={<Supervision />} />
         <Route path="/interest" element={<Interest />} />
-        <Route path="/interestsub" element={<InterestSub />} />
+        <Route path="/interestsub" element={<Navigate to="/interestsub/ml" replace />} />
+        <Route path="/interestsub/:section" element={<InterestSub />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/awards" element={<Awards />} />
