@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.c46e8626.css",
-    "main.js": "/static/js/main.a35719dd.js",
+    "main.js": "/static/js/main.319d486e.js",
     "static/media/v2.mp4": "/static/media/v2.87d7f1b49ab5b882ef96.mp4",
     "static/media/v1.MOV": "/static/media/v1.8a7194b3c18f9748e6dd.MOV",
     "static/media/BaidyaCV_Canada.pdf": "/static/media/BaidyaCV_Canada.20f621e4d3298be55d5a.pdf",
@@ -54,10 +54,10 @@
     "static/media/NVIDIA_logo.png": "/static/media/NVIDIA_logo.54bde6dcf45b5f8f07af.png",
     "index.html": "/index.html",
     "main.c46e8626.css.map": "/static/css/main.c46e8626.css.map",
-    "main.a35719dd.js.map": "/static/js/main.a35719dd.js.map"
+    "main.319d486e.js.map": "/static/js/main.319d486e.js.map"
   },
   "entrypoints": [
     "static/css/main.c46e8626.css",
-    "static/js/main.a35719dd.js"
+    "static/js/main.319d486e.js"
   ]
 }
